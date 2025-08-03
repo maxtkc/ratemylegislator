@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ratemylegislator-backend
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/logs:/app/logs
+      - ./backend/src:/app/src  # For development - remove in production
+    environment:
+      - PYTHONPATH=/app/src
+      - DATABASE_URL=sqlite:///app/data/hawaii_legislature.db
+    ports:
+      - "8000:8000"  # For future API endpoints
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "src/test_schema.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  frontend-dev:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: development
+    container_name: ratemylegislator-frontend-dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules  # Anonymous volume for node_modules
+    environment:
+      - NODE_ENV=development
+      - GATSBY_API_URL=http://backend:8000
+    ports:
+      - "3000:8000"  # Gatsby dev server runs on port 8000 inside container
+    depends_on:
+      - backend
+    restart: unless-stopped
+    command: ["npm", "run", "develop", "--", "--host", "0.0.0.0"]
+
+  frontend-prod:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: production
+    container_name: ratemylegislator-frontend-prod
+    environment:
+      - GATSBY_API_URL=http://backend:8000
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    profiles:
+      - production  # Only runs when specifically requested
+
+  # Database service (for future PostgreSQL migration)
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: ratemylegislator-db
+  #   environment:
+  #     POSTGRES_DB: hawaii_legislature
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   restart: unless-stopped
+
+volumes:
+  # postgres_data:
+  backend_data:
+  backend_logs:
