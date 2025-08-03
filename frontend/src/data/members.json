@@ -1,0 +1,50 @@
+[
+  {
+    "id": 2,
+    "name": "Representative John Doe",
+    "latest_term": {
+      "year": 2025,
+      "title": "Representative",
+      "party": "Democratic",
+      "district_type": "House",
+      "district_number": 2,
+      "district_description": "District 2",
+      "email": "representative.john.doe@capitol.hawaii.gov",
+      "phone": "(808) 555-0100"
+    },
+    "committees": [],
+    "photo_url": "https://example.com/representative_john_doe.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Senator Jane Smith",
+    "latest_term": {
+      "year": 2025,
+      "title": "Senator",
+      "party": "Democratic",
+      "district_type": "Senate",
+      "district_number": 1,
+      "district_description": "District 1",
+      "email": "senator.jane.smith@capitol.hawaii.gov",
+      "phone": "(808) 555-0100"
+    },
+    "committees": [],
+    "photo_url": "https://example.com/senator_jane_smith.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Senator Maria Rodriguez",
+    "latest_term": {
+      "year": 2025,
+      "title": "Senator",
+      "party": "Democratic",
+      "district_type": "Senate",
+      "district_number": 3,
+      "district_description": "District 3",
+      "email": "senator.maria.rodriguez@capitol.hawaii.gov",
+      "phone": "(808) 555-0100"
+    },
+    "committees": [],
+    "photo_url": "https://example.com/senator_maria_rodriguez.jpg"
+  }
+]

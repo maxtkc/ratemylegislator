@@ -1,0 +1,14 @@
+{
+  "bills_by_type": {
+    "HB": 1,
+    "SB": 2
+  },
+  "bills_by_year": {
+    "2025": 3
+  },
+  "passage_rate": {
+    "passed": 1,
+    "total": 3,
+    "percentage": 33.33
+  }
+}
