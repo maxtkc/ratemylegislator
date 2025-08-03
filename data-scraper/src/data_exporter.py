@@ -12,8 +12,16 @@ from models import Bill, Member, BillStatusUpdate, MemberTerm, MemberCommittee
 from sqlalchemy import func, desc
 
 class DataExporter:
-    def __init__(self, output_dir="../frontend/src/data"):
-        self.db_manager = DatabaseManager()
+    def __init__(self, output_dir=None):
+        # Use environment variable for database URL
+        database_url = os.environ.get('DATABASE_URL', 'sqlite:///app/data/hawaii_legislature.db')
+        self.db_manager = DatabaseManager(database_url)
+        # Ensure tables exist
+        self.db_manager.create_tables()
+        
+        # Use environment variable or default to the mounted volume
+        if output_dir is None:
+            output_dir = os.environ.get('EXPORT_DIR', '/app/export')
         self.output_dir = output_dir
         os.makedirs(output_dir, exist_ok=True)
     
@@ -133,7 +141,7 @@ class DataExporter:
                 # Get committee assignments
                 committees = []
                 if latest_term:
-                    committee_assignments = session.query(MemberCommittee).filter_by(term_id=latest_term.id).all()
+                    committee_assignments = session.query(MemberCommittee).filter_by(member_term_id=latest_term.id).all()
                     committees = [{
                         "committee_name": assignment.committee_name,
                         "position": assignment.position
@@ -153,7 +161,7 @@ class DataExporter:
                         "phone": latest_term.phone if latest_term else None
                     } if latest_term else None,
                     "committees": committees,
-                    "photo_url": member.photo_url
+                    "photo_url": latest_term.photo_url if latest_term else None
                 }
                 members_data.append(member_data)
             
