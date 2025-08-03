@@ -1,21 +1,21 @@
 version: '3.8'
 
 services:
-  backend:
+  data-scraper:
     build:
-      context: ./backend
+      context: ./data-scraper
       dockerfile: Dockerfile
-    container_name: ratemylegislator-backend
+    container_name: ratemylegislator-data-scraper
     volumes:
-      - ./backend/data:/app/data
-      - ./backend/logs:/app/logs
-      - ./backend/src:/app/src  # For development - remove in production
+      - ./data-scraper/data:/app/data
+      - ./data-scraper/logs:/app/logs
+      - ./data-scraper/src:/app/src  # For development
+      - ./frontend/src/data:/app/export  # Export data directly to frontend
     environment:
       - PYTHONPATH=/app/src
       - DATABASE_URL=sqlite:///app/data/hawaii_legislature.db
-    ports:
-      - "8000:8000"  # For future API endpoints
-    restart: unless-stopped
+      - EXPORT_DIR=/app/export
+    restart: "no"  # Don't restart automatically - run on demand
     healthcheck:
       test: ["CMD", "python", "src/test_schema.py"]
       interval: 30s
@@ -34,29 +34,26 @@ services:
       - /app/node_modules  # Anonymous volume for node_modules
     environment:
       - NODE_ENV=development
-      - GATSBY_API_URL=http://backend:8000
     ports:
       - "3000:8000"  # Gatsby dev server runs on port 8000 inside container
-    depends_on:
-      - backend
     restart: unless-stopped
     command: ["npm", "run", "develop", "--", "--host", "0.0.0.0"]
 
-  frontend-prod:
+  frontend-build:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-      target: production
-    container_name: ratemylegislator-frontend-prod
+      target: build
+    container_name: ratemylegislator-frontend-build
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - ./frontend/public:/app/public  # Export built files
     environment:
-      - GATSBY_API_URL=http://backend:8000
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
-    restart: unless-stopped
+      - NODE_ENV=production
     profiles:
-      - production  # Only runs when specifically requested
+      - build
+    command: ["npm", "run", "build:github"]
 
   # Database service (for future PostgreSQL migration)
   # postgres:
@@ -74,5 +71,5 @@ services:
 
 volumes:
   # postgres_data:
-  backend_data:
-  backend_logs:
+  scraper_data:
+  scraper_logs:

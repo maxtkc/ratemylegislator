@@ -1,0 +1,2 @@
+# Data directory for exported JSON files from data-scraper
+# The data-scraper will generate static JSON files that Gatsby will consume

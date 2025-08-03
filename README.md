@@ -1,56 +1,180 @@
 # Rate My Legislator
 
-A comprehensive platform for tracking and rating Hawaii State Legislature performance, combining data scraping with an interactive web interface.
+A static website for tracking Hawaii State Legislature performance, built with containerized data scraping and static site generation for GitHub Pages deployment.
 
-## Project Structure
+## Project Architecture
+
+This project follows a **data-scraper + static site** architecture:
+
+- **Data Scraper**: Containerized Python application that scrapes legislature data and exports JSON files
+- **Static Frontend**: Gatsby.js application that consumes JSON data and builds a static site for GitHub Pages
 
 ```
 ratemylegislator/
-├── backend/                # Python scraping and data management
-│   ├── src/               # Source code
+├── data-scraper/          # Python scraping and data management
+│   ├── src/              # Source code including data export
 │   ├── data/             # Database files
 │   ├── logs/             # Application logs
-│   └── tests/            # Test files
-├── frontend/              # Gatsby.js web application (coming soon)
+│   └── Dockerfile        # Container configuration
+├── frontend/              # Gatsby.js static site generator
+│   ├── src/              # React components and pages
+│   │   └── data/         # JSON files exported from data-scraper
+│   ├── Dockerfile        # Container configuration
+│   └── package.json      # Dependencies and build scripts
 ├── examples/              # Example HTML pages from legislature site
-├── docs/                  # Documentation
+├── docker-compose.yml     # Container orchestration
+├── Makefile              # Development commands
 └── README.md             # This file
 ```
 
-## Backend (Data Scraping)
+## Quick Start
 
-The backend handles comprehensive scraping of the Hawaii State Legislature website.
+### Prerequisites
+- Docker and Docker Compose
+- Git
+
+### Development Workflow
+
+1. **Clone and Build**:
+   ```bash
+   git clone <repository-url>
+   cd ratemylegislator
+   make build
+   ```
+
+2. **Scrape Data**:
+   ```bash
+   make scrape          # Run limited scrape for testing
+   make export-data     # Export data to JSON for frontend
+   ```
+
+3. **Start Development Server**:
+   ```bash
+   make up              # Start Gatsby development server on http://localhost:3000
+   ```
+
+4. **Build for Production**:
+   ```bash
+   make build-static    # Build static site for GitHub Pages
+   ```
+
+## Data Scraper
+
+The data scraper is a containerized Python application that handles all data collection and processing.
 
 ### Features
 
-- **Comprehensive Bill Scraping**: All bill types (SB, HB, SR, HR, SCR, HCR, GM) with full status history
-- **Member Information**: Complete member profiles with district info, contact details, and committee assignments
+- **Comprehensive Scraping**: All bill types (SB, HB, SR, HR, SCR, HCR, GM) with full status history
+- **Member Information**: Complete member profiles with district info and committee assignments
 - **Historical Data**: Supports scraping from 2008 to present
-- **Robust Database**: SQLAlchemy models with proper relationships and foreign keys
-- **Error Handling**: Retry logic, rate limiting, and comprehensive logging
-- **Cloudflare Bypass**: Uses cloudscraper to handle protected sites
+- **Cloudflare Bypass**: Uses cloudscraper to handle 403 errors
+- **Data Export**: Generates optimized JSON files for static site consumption
+- **Docker Isolation**: Runs in container to avoid dependency conflicts
 
-### Quick Start
+### Available Commands
 
-1. **Setup Backend**:
+```bash
+make scrape          # Run limited test scrape
+make scrape-full     # Run comprehensive scraping for current year
+make export-data     # Export database to JSON files
+make scrape-and-export  # Combined scrape + export workflow
+make test            # Run data scraper tests
+make scraper-shell   # Access scraper container shell
+```
+
+### Data Export
+
+The scraper exports data to `frontend/src/data/` as JSON files:
+
+- `summary.json` - Overall statistics and metadata
+- `bills_YYYY.json` - Bills data organized by year
+- `bills_all.json` - All bills summary (lighter version)
+- `members.json` - Member information with latest terms
+- `recent_activity.json` - Recent legislative activity
+- `analytics.json` - Data for charts and visualizations
+
+## Static Frontend
+
+The frontend is a Gatsby.js application optimized for GitHub Pages deployment.
+
+### Features
+
+- **Static Generation**: Pre-built pages for fast loading
+- **GitHub Pages Ready**: Configured for seamless deployment
+- **Responsive Design**: Mobile-friendly interface
+- **Data Visualization**: Charts and graphs showing legislative trends
+- **Search & Filter**: Browse bills and members efficiently
+- **Performance Optimized**: Lazy loading and code splitting
+
+### Development Commands
+
+```bash
+make frontend        # Start development server
+make build-static    # Build for GitHub Pages
+make frontend-shell  # Access frontend container shell
+```
+
+### Local Development
+
+```bash
+cd frontend
+npm install
+npm run develop      # Start local development
+npm run build:github # Build for GitHub Pages
+npm run deploy       # Deploy to GitHub Pages (requires setup)
+```
+
+## Deployment to GitHub Pages
+
+### Setup
+
+1. **Configure Repository**:
+   - Update `frontend/gatsby-config.ts` with your GitHub username/repository
+   - Ensure GitHub Pages is enabled in repository settings
+
+2. **Deploy**:
    ```bash
-   cd backend
-   pip install -r requirements.txt
+   # Method 1: Using make command
+   make deploy
+   
+   # Method 2: Manual build and deploy
+   make build-static
+   cd frontend
+   npm run deploy
    ```
 
-2. **Run Test Scrape**:
-   ```bash
-   cd backend/src
-   python limited_scrape_2025.py
-   ```
+### GitHub Actions (Optional)
 
-3. **Run Batch Scraping**:
-   ```bash
-   cd backend/src
-   python batch_scraper.py --mode test
-   ```
+You can set up GitHub Actions to automatically build and deploy when you push to main:
 
-### Database Schema
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - name: Install and build
+        run: |
+          cd frontend
+          npm ci
+          npm run build:github
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/public
+```
+
+## Database Schema
 
 - **Bills**: Main bill information with versions, titles, and metadata
 - **Bill Status Updates**: Complete chronological status history
@@ -59,27 +183,6 @@ The backend handles comprehensive scraping of the Hawaii State Legislature websi
 - **Members**: Persistent member information across years
 - **Member Terms**: Year-specific information (party, district, contact info)
 - **Member Committees**: Committee assignments and positions
-
-## Frontend (Web Interface)
-
-The frontend will be built with Gatsby.js to provide an interactive web interface for exploring legislative data.
-
-### Planned Features
-
-- **Legislator Profiles**: Detailed pages for each member with voting history
-- **Bill Tracking**: Search and filter bills by type, status, and topic
-- **Performance Metrics**: Rating system for legislator effectiveness
-- **Data Visualization**: Charts and graphs showing legislative trends
-- **Responsive Design**: Mobile-friendly interface
-- **Fast Performance**: Static site generation with Gatsby
-
-### Setup (Coming Soon)
-
-```bash
-cd frontend
-npm install
-npm start
-```
 
 ## Examples
 
@@ -90,33 +193,28 @@ The `examples/` directory contains sample HTML pages from the Hawaii Legislature
 
 These are useful for understanding the structure of the source data.
 
-## Development
+## Development Tips
 
 ### Adding New Features
 
-1. **Backend Changes**: Modify Python scrapers in `backend/src/`
-2. **Frontend Changes**: Add React components in `frontend/src/` (coming soon)
-3. **Database Changes**: Update models in `backend/src/models.py`
+1. **Data Changes**: Modify scrapers in `data-scraper/src/`
+2. **Frontend Changes**: Add React components in `frontend/src/`
+3. **Database Changes**: Update models in `data-scraper/src/models.py`
 
 ### Testing
 
 ```bash
-# Test backend
-cd backend/src
-python test_schema.py
-
-# Test frontend (coming soon)
-cd frontend
-npm test
+make test            # Test data scraper
+cd frontend && npm test  # Test frontend (when tests are added)
 ```
 
-### Contributing
+### Debugging
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
+```bash
+make scraper-shell   # Access data scraper container
+make frontend-shell  # Access frontend container
+make logs           # View all container logs
+```
 
 ## Data Privacy
 
@@ -125,6 +223,14 @@ This project scrapes publicly available data from the Hawaii Legislature website
 ## Legal Notice
 
 This tool is for educational and research purposes. Please respect the Hawaii Legislature website's terms of service and scrape responsibly.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes and test with Docker
+4. Update documentation if needed
+5. Submit a pull request
 
 ## License
 

@@ -1,28 +1,31 @@
 # Rate My Legislator - Docker Commands
 
-.PHONY: help build up down logs clean test backend frontend frontend-prod
+.PHONY: help build up down logs clean test scraper frontend build-static deploy
 
 # Default target
 help:
 	@echo "Available commands:"
-	@echo "  build         - Build all Docker images"
-	@echo "  up            - Start development environment (backend + frontend-dev)"
-	@echo "  down          - Stop all services"
-	@echo "  logs          - View logs from all services"
-	@echo "  clean         - Clean up Docker resources"
-	@echo "  test          - Run tests"
-	@echo "  backend       - Start only backend service"
-	@echo "  frontend      - Start only frontend development"
-	@echo "  frontend-prod - Start frontend in production mode"
-	@echo "  scrape        - Run a limited scrape"
+	@echo "  build          - Build all Docker images"
+	@echo "  up             - Start frontend development server"
+	@echo "  down           - Stop all services"
+	@echo "  logs           - View logs from all services"
+	@echo "  clean          - Clean up Docker resources"
+	@echo "  test           - Run data-scraper tests"
+	@echo "  scraper        - Start data-scraper service"
+	@echo "  frontend       - Start frontend development server"
+	@echo "  build-static   - Build static site for GitHub Pages"
+	@echo "  deploy         - Deploy to GitHub Pages"
+	@echo "  scrape         - Run a limited scrape"
+	@echo "  scrape-full    - Run full data scraping"
+	@echo "  export-data    - Export scraped data to JSON for frontend"
 
 # Build all images
 build:
 	docker-compose build
 
-# Start development environment
+# Start development environment (frontend only)
 up:
-	docker-compose up -d backend frontend-dev
+	docker-compose up -d frontend-dev
 
 # Stop all services
 down:
@@ -39,31 +42,48 @@ clean:
 
 # Run tests
 test:
-	docker-compose run --rm backend python src/test_schema.py
+	docker-compose run --rm data-scraper python src/test_schema.py
 
-# Backend only
-backend:
-	docker-compose up -d backend
+# Data scraper service
+scraper:
+	docker-compose up -d data-scraper
 
 # Frontend development only
 frontend:
 	docker-compose up -d frontend-dev
 
-# Frontend production
-frontend-prod:
-	docker-compose --profile production up -d frontend-prod
+# Build static site for deployment
+build-static:
+	docker-compose --profile build run --rm frontend-build
 
-# Run scraper
+# Deploy to GitHub Pages (run locally)
+deploy:
+	cd frontend && npm run deploy
+
+# Run limited scrape
 scrape:
-	docker-compose run --rm backend python src/limited_scrape_2025.py
+	docker-compose run --rm data-scraper python src/limited_scrape_2025.py
+
+# Run full scrape
+scrape-full:
+	docker-compose run --rm data-scraper python src/batch_scraper.py --mode both --year 2025
+
+# Export data to frontend
+export-data:
+	docker-compose run --rm data-scraper python src/data_exporter.py
+
+# Combined workflow: scrape and export
+scrape-and-export:
+	make scrape
+	make export-data
 
 # Install frontend dependencies
 frontend-install:
 	docker-compose run --rm frontend-dev npm install
 
-# Backend shell
-backend-shell:
-	docker-compose exec backend /bin/bash
+# Data scraper shell
+scraper-shell:
+	docker-compose exec data-scraper /bin/bash
 
 # Frontend shell
 frontend-shell:
