@@ -41,12 +41,13 @@ def parse_year_range(year_str):
         return [int(year_str)]
 
 class BatchScraper:
-    def __init__(self, delay=0.5):
+    def __init__(self, delay=0.5, max_workers=4):
         self.db_manager = DatabaseManager()
         self.db_manager.create_tables()  # Ensure tables exist
         self.bill_scraper = BillScraper(db_manager=self.db_manager)
         self.member_scraper = MemberScraper(db_manager=self.db_manager)
         self.delay = delay
+        self.max_workers = max_workers
         self.logger = setup_logging()
         self.stats = ScrapingStats()
         
@@ -54,74 +55,32 @@ class BatchScraper:
         self.bill_types = ['SB', 'HB', 'SR', 'HR', 'SCR', 'HCR', 'GM']
     
     def scrape_bills_for_year(self, year, bill_types=None, start_number=1, max_number=10000):
-        """Scrape all bills for a given year"""
+        """Scrape all bills for a given year using multithreading"""
         if bill_types is None:
             bill_types = self.bill_types
         
-        self.logger.info(f"Starting bill scraping for year {year}")
+        self.logger.info(f"Starting multithreaded bill scraping for year {year} (using {self.max_workers} threads)")
         self.stats.reset()
         
         for bill_type in bill_types:
             self.logger.info(f"Scraping {bill_type} bills for {year}")
-            consecutive_404s = 0
-            bill_number = start_number
-            
-            while consecutive_404s < 2 and bill_number <= max_number:
-                self.stats.record_attempt()
-                
-                try:
-                    success = self.bill_scraper.scrape_bill(bill_type, bill_number, year)
-                    
-                    if success:
-                        consecutive_404s = 0
-                        self.stats.record_success()
-                    else:
-                        consecutive_404s += 1
-                        self.stats.record_failure()
-                        self.logger.debug(f"404 #{consecutive_404s} for {bill_type}{bill_number}-{year}")
-                
-                except Exception as e:
-                    self.logger.error(f"Error scraping {bill_type}{bill_number}-{year}: {e}")
-                    consecutive_404s += 1
-                    self.stats.record_failure()
-                
-                bill_number += 1
-                time.sleep(self.delay)
-                
-                # Progress reporting
-                if bill_number % 100 == 0:
-                    self.logger.info(f"Progress: {bill_type} {bill_number} ({self.stats.total_successful} successful)")
-            
-            self.logger.info(f"Completed {bill_type} for {year} (stopped at {bill_number})")
+            success_count = self.bill_scraper.scrape_bill_range(
+                bill_type, year, start_number, max_number, self.max_workers
+            )
+            self.stats.total_successful += success_count
         
         self.stats.print_summary()
         self.logger.info(f"Completed bill scraping for year {year}")
     
     def scrape_members_for_year(self, year, start_id=1, end_id=1500, batch_size=50):
-        """Scrape all members for a given year"""
-        self.logger.info(f"Starting member scraping for year {year} (IDs {start_id}-{end_id})")
+        """Scrape all members for a given year using multithreading"""
+        self.logger.info(f"Starting multithreaded member scraping for year {year} (IDs {start_id}-{end_id}) (using {self.max_workers} threads)")
         self.stats.reset()
         
-        for member_id in range(start_id, end_id + 1):
-            self.stats.record_attempt()
-            
-            try:
-                success = self.member_scraper.scrape_member(member_id, year)
-                
-                if success:
-                    self.stats.record_success()
-                else:
-                    self.stats.record_failure()
-            
-            except Exception as e:
-                self.logger.error(f"Error scraping member {member_id}-{year}: {e}")
-                self.stats.record_failure()
-            
-            time.sleep(self.delay)
-            
-            # Progress reporting
-            if member_id % batch_size == 0:
-                self.logger.info(f"Progress: Member {member_id}/{end_id} ({self.stats.total_successful} successful)")
+        success_count = self.member_scraper.scrape_member_range(
+            year, start_id, end_id, self.max_workers
+        )
+        self.stats.total_successful = success_count
         
         self.stats.print_summary()
         self.logger.info(f"Completed member scraping for year {year}")
@@ -328,6 +287,7 @@ def main():
     parser.add_argument('--bill-types', nargs='+', help='Bill types to scrape', 
                         choices=['SB', 'HB', 'SR', 'HR', 'SCR', 'HCR', 'GM'])
     parser.add_argument('--delay', type=float, default=0.5, help='Delay between requests (seconds)')
+    parser.add_argument('--max-workers', type=int, default=4, help='Number of concurrent threads (1-8)')
     parser.add_argument('--start-id', type=int, default=1, help='Start member ID')
     parser.add_argument('--end-id', type=int, default=1500, help='End member ID')
     parser.add_argument('--max-bills', type=int, default=10000, help='Maximum bill number to try')
@@ -339,8 +299,12 @@ def main():
     
     args = parser.parse_args()
     
+    # Validate max_workers
+    if args.max_workers < 1 or args.max_workers > 8:
+        parser.error("--max-workers must be between 1 and 8")
+    
     # Initialize scraper
-    scraper = BatchScraper(delay=args.delay)
+    scraper = BatchScraper(delay=args.delay, max_workers=args.max_workers)
     
     # Determine year range
     if args.end_year is None:

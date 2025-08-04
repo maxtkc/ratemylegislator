@@ -12,6 +12,8 @@ from urllib.parse import urljoin, urlparse
 from database import DatabaseManager
 from models import Member, MemberTerm, MemberCommittee
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
 
 class MemberScraper:
     def __init__(self, db_manager=None):
@@ -24,6 +26,7 @@ class MemberScraper:
             }
         )
         self.base_url = "https://www.capitol.hawaii.gov"
+        self._lock = threading.Lock()  # Thread safety for shared resources
     
     def decode_cf_email(self, encoded_string):
         """Decode Cloudflare protected email addresses"""
@@ -472,24 +475,63 @@ class MemberScraper:
         finally:
             self.db_manager.close_session(db_session)
     
-    def scrape_member_range(self, year, start_id=1, end_id=1500):
-        """Scrape a range of member IDs for a given year"""
-        print(f"Scraping members {start_id}-{end_id} for year {year}")
+    def scrape_member_range(self, year, start_id=1, end_id=1500, max_workers=4):
+        """Scrape a range of member IDs for a given year using multithreading"""
+        print(f"Scraping members {start_id}-{end_id} for year {year} (using {max_workers} threads)")
         
         success_count = 0
-        for member_id in range(start_id, end_id + 1):
-            if self.scrape_member(member_id, year):
-                success_count += 1
-            
-            # Progress indicator
-            if member_id % 50 == 0:
-                print(f"  Progress: {member_id}/{end_id} ({success_count} successful)")
-            
-            # Be respectful to the server
-            time.sleep(0.5)
+        total_members = end_id - start_id + 1
         
-        print(f"Completed scraping {end_id - start_id + 1} member IDs, {success_count} successful")
+        # Create list of member IDs to scrape
+        member_ids = list(range(start_id, end_id + 1))
+        
+        # Use ThreadPoolExecutor for concurrent scraping
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # Submit all tasks
+            future_to_member = {
+                executor.submit(self._scrape_member_thread_safe, member_id, year): member_id 
+                for member_id in member_ids
+            }
+            
+            # Process completed tasks
+            for future in as_completed(future_to_member):
+                member_id = future_to_member[future]
+                try:
+                    if future.result():
+                        success_count += 1
+                except Exception as e:
+                    print(f"  Exception for member {member_id}-{year}: {e}")
+                
+                # Progress indicator
+                if success_count % 20 == 0:
+                    print(f"  Progress: {success_count} successful out of {total_members} total")
+        
+        print(f"Completed scraping {total_members} member IDs, {success_count} successful")
         return success_count
+    
+    def _scrape_member_thread_safe(self, member_id, year):
+        """Thread-safe wrapper for scrape_member with individual session per thread"""
+        # Create a thread-local session to avoid session conflicts
+        local_session = cloudscraper.create_scraper(
+            browser={
+                'browser': 'firefox',
+                'platform': 'windows',
+                'mobile': False
+            }
+        )
+        
+        # Temporarily replace the shared session
+        original_session = self.session
+        self.session = local_session
+        
+        try:
+            result = self.scrape_member(member_id, year)
+            # Add small delay to be respectful to server
+            time.sleep(0.1)  # Reduced delay since we're using fewer concurrent requests
+            return result
+        finally:
+            # Restore original session
+            self.session = original_session
 
 if __name__ == "__main__":
     scraper = MemberScraper()

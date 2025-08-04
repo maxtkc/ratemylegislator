@@ -237,6 +237,7 @@ type BooleanQueryOperatorInput = {
 };
 
 type DataJson = Node & {
+  readonly bill_types: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly children: ReadonlyArray<Node>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
@@ -245,6 +246,7 @@ type DataJson = Node & {
   readonly passage_rate: Maybe<DataJsonPassage_rate>;
   readonly total_bills: Maybe<Scalars['Int']>;
   readonly total_members: Maybe<Scalars['Int']>;
+  readonly years_available: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>;
 };
 
 
@@ -301,6 +303,7 @@ type DataJsonEdge = {
 };
 
 type DataJsonFieldSelector = {
+  readonly bill_types: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
@@ -309,9 +312,11 @@ type DataJsonFieldSelector = {
   readonly passage_rate: InputMaybe<DataJsonPassage_rateFieldSelector>;
   readonly total_bills: InputMaybe<FieldSelectorEnum>;
   readonly total_members: InputMaybe<FieldSelectorEnum>;
+  readonly years_available: InputMaybe<FieldSelectorEnum>;
 };
 
 type DataJsonFilterInput = {
+  readonly bill_types: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
@@ -320,6 +325,7 @@ type DataJsonFilterInput = {
   readonly passage_rate: InputMaybe<DataJsonPassage_rateFilterInput>;
   readonly total_bills: InputMaybe<IntQueryOperatorInput>;
   readonly total_members: InputMaybe<IntQueryOperatorInput>;
+  readonly years_available: InputMaybe<IntQueryOperatorInput>;
 };
 
 type DataJsonFilterListInput = {
@@ -392,6 +398,7 @@ type DataJsonPassage_rateSortInput = {
 };
 
 type DataJsonSortInput = {
+  readonly bill_types: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
@@ -400,6 +407,7 @@ type DataJsonSortInput = {
   readonly passage_rate: InputMaybe<DataJsonPassage_rateSortInput>;
   readonly total_bills: InputMaybe<SortOrderEnum>;
   readonly total_members: InputMaybe<SortOrderEnum>;
+  readonly years_available: InputMaybe<SortOrderEnum>;
 };
 
 type DateQueryOperatorInput = {
@@ -1788,6 +1796,7 @@ type MembersJsonGroupConnection_sumArgs = {
 type MembersJsonLatest_term = {
   readonly about_content: Maybe<Scalars['String']>;
   readonly allowance_report_url: Maybe<Scalars['String']>;
+  readonly current_experience: Maybe<Scalars['String']>;
   readonly district_description: Maybe<Scalars['String']>;
   readonly district_map_url: Maybe<Scalars['String']>;
   readonly district_number: Maybe<Scalars['Int']>;
@@ -1806,6 +1815,7 @@ type MembersJsonLatest_term = {
 type MembersJsonLatest_termFieldSelector = {
   readonly about_content: InputMaybe<FieldSelectorEnum>;
   readonly allowance_report_url: InputMaybe<FieldSelectorEnum>;
+  readonly current_experience: InputMaybe<FieldSelectorEnum>;
   readonly district_description: InputMaybe<FieldSelectorEnum>;
   readonly district_map_url: InputMaybe<FieldSelectorEnum>;
   readonly district_number: InputMaybe<FieldSelectorEnum>;
@@ -1824,6 +1834,7 @@ type MembersJsonLatest_termFieldSelector = {
 type MembersJsonLatest_termFilterInput = {
   readonly about_content: InputMaybe<StringQueryOperatorInput>;
   readonly allowance_report_url: InputMaybe<StringQueryOperatorInput>;
+  readonly current_experience: InputMaybe<StringQueryOperatorInput>;
   readonly district_description: InputMaybe<StringQueryOperatorInput>;
   readonly district_map_url: InputMaybe<StringQueryOperatorInput>;
   readonly district_number: InputMaybe<IntQueryOperatorInput>;
@@ -1842,6 +1853,7 @@ type MembersJsonLatest_termFilterInput = {
 type MembersJsonLatest_termSortInput = {
   readonly about_content: InputMaybe<SortOrderEnum>;
   readonly allowance_report_url: InputMaybe<SortOrderEnum>;
+  readonly current_experience: InputMaybe<SortOrderEnum>;
   readonly district_description: InputMaybe<SortOrderEnum>;
   readonly district_map_url: InputMaybe<SortOrderEnum>;
   readonly district_number: InputMaybe<SortOrderEnum>;
@@ -2125,6 +2137,7 @@ type Query_bills2025JsonArgs = {
 
 
 type Query_dataJsonArgs = {
+  bill_types: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
@@ -2133,6 +2146,7 @@ type Query_dataJsonArgs = {
   passage_rate: InputMaybe<DataJsonPassage_rateFilterInput>;
   total_bills: InputMaybe<IntQueryOperatorInput>;
   total_members: InputMaybe<IntQueryOperatorInput>;
+  years_available: InputMaybe<IntQueryOperatorInput>;
 };
 
 

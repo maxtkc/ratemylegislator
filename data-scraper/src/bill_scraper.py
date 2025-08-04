@@ -15,6 +15,8 @@ from scraper_utils import (setup_logging, clean_text, parse_date, extract_act_nu
                           safe_get_attribute)
 import time
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
 
 class BillScraper:
     def __init__(self, log_file="bill_scraper.log", db_manager=None):
@@ -28,6 +30,7 @@ class BillScraper:
         )
         self.base_url = "https://www.capitol.hawaii.gov"
         self.logger = setup_logging(log_file)
+        self._lock = threading.Lock()  # Thread safety for shared resources
     
     def fetch_bill_page(self, bill_type, bill_number, year, max_retries=3):
         """Fetch a bill page with retry logic"""
@@ -332,6 +335,67 @@ class BillScraper:
             return False
         finally:
             self.db_manager.close_session(db_session)
+    
+    def scrape_bill_range(self, bill_type, year, start_number=1, max_number=10000, max_workers=4):
+        """Scrape a range of bill numbers for a given type and year using multithreading"""
+        print(f"Scraping {bill_type} bills {start_number}-{max_number} for year {year} (using {max_workers} threads)")
+        
+        success_count = 0
+        
+        # Generate all bill numbers to scrape
+        bill_numbers = list(range(start_number, max_number + 1))
+        
+        # Use ThreadPoolExecutor for concurrent scraping
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # Submit all tasks
+            future_to_bill = {
+                executor.submit(self._scrape_bill_thread_safe, bill_type, bill_number, year): bill_number 
+                for bill_number in bill_numbers
+            }
+            
+            # Process completed tasks
+            completed = 0
+            for future in as_completed(future_to_bill):
+                bill_number = future_to_bill[future]
+                completed += 1
+                try:
+                    result = future.result()
+                    if result:
+                        success_count += 1
+                        
+                except Exception as e:
+                    print(f"  Exception for {bill_type}{bill_number}-{year}: {e}")
+                
+                # Progress indicator
+                if completed % 10 == 0 or completed == len(bill_numbers):
+                    print(f"  Progress: {completed}/{len(bill_numbers)} processed, {success_count} successful {bill_type} bills")
+        
+        print(f"Completed scraping {bill_type} for {year}, {success_count} successful")
+        return success_count
+    
+    def _scrape_bill_thread_safe(self, bill_type, bill_number, year):
+        """Thread-safe wrapper for scrape_bill with individual session per thread"""
+        # Create a thread-local session to avoid session conflicts
+        local_session = cloudscraper.create_scraper(
+            browser={
+                'browser': 'firefox',
+                'platform': 'windows',
+                'mobile': False
+            }
+        )
+        
+        # Temporarily replace the shared session
+        original_session = self.session
+        self.session = local_session
+        
+        try:
+            result = self.scrape_bill(bill_type, bill_number, year)
+            # Add small delay to be respectful to server
+            time.sleep(0.1)  # Reduced delay since we're using fewer concurrent requests
+            return result
+        finally:
+            # Restore original session
+            self.session = original_session
 
 if __name__ == "__main__":
     scraper = BillScraper()

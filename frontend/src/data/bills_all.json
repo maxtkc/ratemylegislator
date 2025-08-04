@@ -1,1 +1,3602 @@
-[]
+[
+  {
+    "id": 201,
+    "bill_type": "HB",
+    "bill_number": 1,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB1",
+    "act_number": null
+  },
+  {
+    "id": 202,
+    "bill_type": "HB",
+    "bill_number": 2,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB2",
+    "act_number": null
+  },
+  {
+    "id": 203,
+    "bill_type": "HB",
+    "bill_number": 3,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB3 HD2 SD1 CD1",
+    "act_number": 100
+  },
+  {
+    "id": 204,
+    "bill_type": "HB",
+    "bill_number": 4,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB4",
+    "act_number": null
+  },
+  {
+    "id": 205,
+    "bill_type": "HB",
+    "bill_number": 5,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB5",
+    "act_number": null
+  },
+  {
+    "id": 206,
+    "bill_type": "HB",
+    "bill_number": 6,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB6",
+    "act_number": null
+  },
+  {
+    "id": 207,
+    "bill_type": "HB",
+    "bill_number": 7,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB7",
+    "act_number": null
+  },
+  {
+    "id": 208,
+    "bill_type": "HB",
+    "bill_number": 8,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB8",
+    "act_number": null
+  },
+  {
+    "id": 209,
+    "bill_type": "HB",
+    "bill_number": 9,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB9",
+    "act_number": null
+  },
+  {
+    "id": 210,
+    "bill_type": "HB",
+    "bill_number": 10,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB10",
+    "act_number": null
+  },
+  {
+    "id": 211,
+    "bill_type": "HB",
+    "bill_number": 11,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB11",
+    "act_number": null
+  },
+  {
+    "id": 212,
+    "bill_type": "HB",
+    "bill_number": 12,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB12",
+    "act_number": null
+  },
+  {
+    "id": 213,
+    "bill_type": "HB",
+    "bill_number": 13,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB13",
+    "act_number": null
+  },
+  {
+    "id": 214,
+    "bill_type": "HB",
+    "bill_number": 14,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB14",
+    "act_number": null
+  },
+  {
+    "id": 215,
+    "bill_type": "HB",
+    "bill_number": 15,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB15",
+    "act_number": null
+  },
+  {
+    "id": 216,
+    "bill_type": "HB",
+    "bill_number": 16,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB16",
+    "act_number": null
+  },
+  {
+    "id": 217,
+    "bill_type": "HB",
+    "bill_number": 17,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB17",
+    "act_number": null
+  },
+  {
+    "id": 218,
+    "bill_type": "HB",
+    "bill_number": 18,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB18",
+    "act_number": null
+  },
+  {
+    "id": 219,
+    "bill_type": "HB",
+    "bill_number": 19,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB19",
+    "act_number": null
+  },
+  {
+    "id": 220,
+    "bill_type": "HB",
+    "bill_number": 20,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB20",
+    "act_number": null
+  },
+  {
+    "id": 221,
+    "bill_type": "HB",
+    "bill_number": 21,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB21",
+    "act_number": null
+  },
+  {
+    "id": 222,
+    "bill_type": "HB",
+    "bill_number": 22,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB22",
+    "act_number": null
+  },
+  {
+    "id": 223,
+    "bill_type": "HB",
+    "bill_number": 23,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB23",
+    "act_number": null
+  },
+  {
+    "id": 224,
+    "bill_type": "HB",
+    "bill_number": 24,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB24",
+    "act_number": null
+  },
+  {
+    "id": 225,
+    "bill_type": "HB",
+    "bill_number": 25,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB25",
+    "act_number": null
+  },
+  {
+    "id": 226,
+    "bill_type": "HB",
+    "bill_number": 26,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB26",
+    "act_number": null
+  },
+  {
+    "id": 227,
+    "bill_type": "HB",
+    "bill_number": 27,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB27",
+    "act_number": null
+  },
+  {
+    "id": 228,
+    "bill_type": "HB",
+    "bill_number": 28,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB28",
+    "act_number": null
+  },
+  {
+    "id": 229,
+    "bill_type": "HB",
+    "bill_number": 29,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB29 HD2",
+    "act_number": null
+  },
+  {
+    "id": 230,
+    "bill_type": "HB",
+    "bill_number": 30,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB30",
+    "act_number": null
+  },
+  {
+    "id": 231,
+    "bill_type": "HB",
+    "bill_number": 31,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB31",
+    "act_number": null
+  },
+  {
+    "id": 232,
+    "bill_type": "HB",
+    "bill_number": 32,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB32",
+    "act_number": null
+  },
+  {
+    "id": 233,
+    "bill_type": "HB",
+    "bill_number": 33,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB33",
+    "act_number": null
+  },
+  {
+    "id": 234,
+    "bill_type": "HB",
+    "bill_number": 34,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB34",
+    "act_number": null
+  },
+  {
+    "id": 235,
+    "bill_type": "HB",
+    "bill_number": 35,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB35",
+    "act_number": null
+  },
+  {
+    "id": 236,
+    "bill_type": "HB",
+    "bill_number": 36,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB36 HD2",
+    "act_number": null
+  },
+  {
+    "id": 237,
+    "bill_type": "HB",
+    "bill_number": 37,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB37",
+    "act_number": null
+  },
+  {
+    "id": 238,
+    "bill_type": "HB",
+    "bill_number": 38,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB38",
+    "act_number": null
+  },
+  {
+    "id": 239,
+    "bill_type": "HB",
+    "bill_number": 39,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB39",
+    "act_number": null
+  },
+  {
+    "id": 240,
+    "bill_type": "HB",
+    "bill_number": 40,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB40",
+    "act_number": null
+  },
+  {
+    "id": 241,
+    "bill_type": "HB",
+    "bill_number": 41,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB41",
+    "act_number": null
+  },
+  {
+    "id": 242,
+    "bill_type": "HB",
+    "bill_number": 42,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB42",
+    "act_number": null
+  },
+  {
+    "id": 243,
+    "bill_type": "HB",
+    "bill_number": 43,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB43",
+    "act_number": null
+  },
+  {
+    "id": 244,
+    "bill_type": "HB",
+    "bill_number": 44,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB44",
+    "act_number": null
+  },
+  {
+    "id": 245,
+    "bill_type": "HB",
+    "bill_number": 45,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB45",
+    "act_number": null
+  },
+  {
+    "id": 246,
+    "bill_type": "HB",
+    "bill_number": 46,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB46",
+    "act_number": null
+  },
+  {
+    "id": 247,
+    "bill_type": "HB",
+    "bill_number": 47,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB47 HD2",
+    "act_number": null
+  },
+  {
+    "id": 248,
+    "bill_type": "HB",
+    "bill_number": 48,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB48 HD2 SD1",
+    "act_number": null
+  },
+  {
+    "id": 249,
+    "bill_type": "HB",
+    "bill_number": 49,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB49",
+    "act_number": null
+  },
+  {
+    "id": 250,
+    "bill_type": "HB",
+    "bill_number": 50,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB50",
+    "act_number": null
+  },
+  {
+    "id": 251,
+    "bill_type": "HB",
+    "bill_number": 51,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB51",
+    "act_number": null
+  },
+  {
+    "id": 252,
+    "bill_type": "HB",
+    "bill_number": 52,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB52",
+    "act_number": null
+  },
+  {
+    "id": 253,
+    "bill_type": "HB",
+    "bill_number": 53,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB53",
+    "act_number": null
+  },
+  {
+    "id": 254,
+    "bill_type": "HB",
+    "bill_number": 54,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB54 HD2 SD2",
+    "act_number": null
+  },
+  {
+    "id": 255,
+    "bill_type": "HB",
+    "bill_number": 55,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB55",
+    "act_number": null
+  },
+  {
+    "id": 256,
+    "bill_type": "HB",
+    "bill_number": 56,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB56",
+    "act_number": null
+  },
+  {
+    "id": 257,
+    "bill_type": "HB",
+    "bill_number": 57,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB57",
+    "act_number": null
+  },
+  {
+    "id": 258,
+    "bill_type": "HB",
+    "bill_number": 58,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB58",
+    "act_number": null
+  },
+  {
+    "id": 259,
+    "bill_type": "HB",
+    "bill_number": 59,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB59",
+    "act_number": null
+  },
+  {
+    "id": 260,
+    "bill_type": "HB",
+    "bill_number": 60,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB60",
+    "act_number": null
+  },
+  {
+    "id": 261,
+    "bill_type": "HB",
+    "bill_number": 61,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB61",
+    "act_number": null
+  },
+  {
+    "id": 262,
+    "bill_type": "HB",
+    "bill_number": 62,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB62",
+    "act_number": null
+  },
+  {
+    "id": 263,
+    "bill_type": "HB",
+    "bill_number": 63,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB63",
+    "act_number": null
+  },
+  {
+    "id": 264,
+    "bill_type": "HB",
+    "bill_number": 64,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB64",
+    "act_number": null
+  },
+  {
+    "id": 265,
+    "bill_type": "HB",
+    "bill_number": 65,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB65",
+    "act_number": null
+  },
+  {
+    "id": 266,
+    "bill_type": "HB",
+    "bill_number": 66,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB66",
+    "act_number": null
+  },
+  {
+    "id": 267,
+    "bill_type": "HB",
+    "bill_number": 67,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB67",
+    "act_number": null
+  },
+  {
+    "id": 268,
+    "bill_type": "HB",
+    "bill_number": 68,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB68",
+    "act_number": null
+  },
+  {
+    "id": 269,
+    "bill_type": "HB",
+    "bill_number": 69,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB69",
+    "act_number": null
+  },
+  {
+    "id": 270,
+    "bill_type": "HB",
+    "bill_number": 70,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB70 HD1 SD1 CD1",
+    "act_number": 157
+  },
+  {
+    "id": 271,
+    "bill_type": "HB",
+    "bill_number": 71,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB71",
+    "act_number": null
+  },
+  {
+    "id": 272,
+    "bill_type": "HB",
+    "bill_number": 72,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB72 HD2 SD1 CD1",
+    "act_number": 93
+  },
+  {
+    "id": 273,
+    "bill_type": "HB",
+    "bill_number": 73,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB73",
+    "act_number": null
+  },
+  {
+    "id": 274,
+    "bill_type": "HB",
+    "bill_number": 74,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB74",
+    "act_number": null
+  },
+  {
+    "id": 275,
+    "bill_type": "HB",
+    "bill_number": 75,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB75",
+    "act_number": null
+  },
+  {
+    "id": 276,
+    "bill_type": "HB",
+    "bill_number": 76,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB76",
+    "act_number": null
+  },
+  {
+    "id": 277,
+    "bill_type": "HB",
+    "bill_number": 77,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB77",
+    "act_number": null
+  },
+  {
+    "id": 278,
+    "bill_type": "HB",
+    "bill_number": 78,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB78",
+    "act_number": null
+  },
+  {
+    "id": 279,
+    "bill_type": "HB",
+    "bill_number": 79,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB79",
+    "act_number": null
+  },
+  {
+    "id": 280,
+    "bill_type": "HB",
+    "bill_number": 80,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB80",
+    "act_number": null
+  },
+  {
+    "id": 281,
+    "bill_type": "HB",
+    "bill_number": 81,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB81",
+    "act_number": null
+  },
+  {
+    "id": 282,
+    "bill_type": "HB",
+    "bill_number": 82,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB82",
+    "act_number": null
+  },
+  {
+    "id": 283,
+    "bill_type": "HB",
+    "bill_number": 83,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB83",
+    "act_number": null
+  },
+  {
+    "id": 284,
+    "bill_type": "HB",
+    "bill_number": 84,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB84",
+    "act_number": null
+  },
+  {
+    "id": 285,
+    "bill_type": "HB",
+    "bill_number": 85,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB85 HD1",
+    "act_number": null
+  },
+  {
+    "id": 286,
+    "bill_type": "HB",
+    "bill_number": 86,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB86 HD2 SD1",
+    "act_number": null
+  },
+  {
+    "id": 287,
+    "bill_type": "HB",
+    "bill_number": 87,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB87",
+    "act_number": null
+  },
+  {
+    "id": 288,
+    "bill_type": "HB",
+    "bill_number": 88,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB88 HD1",
+    "act_number": null
+  },
+  {
+    "id": 289,
+    "bill_type": "HB",
+    "bill_number": 89,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB89 HD3",
+    "act_number": null
+  },
+  {
+    "id": 290,
+    "bill_type": "HB",
+    "bill_number": 90,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB90 HD1",
+    "act_number": null
+  },
+  {
+    "id": 291,
+    "bill_type": "HB",
+    "bill_number": 91,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB91",
+    "act_number": null
+  },
+  {
+    "id": 292,
+    "bill_type": "HB",
+    "bill_number": 92,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB92 HD2",
+    "act_number": null
+  },
+  {
+    "id": 293,
+    "bill_type": "HB",
+    "bill_number": 93,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB93",
+    "act_number": null
+  },
+  {
+    "id": 294,
+    "bill_type": "HB",
+    "bill_number": 94,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB94",
+    "act_number": null
+  },
+  {
+    "id": 295,
+    "bill_type": "HB",
+    "bill_number": 95,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB95",
+    "act_number": null
+  },
+  {
+    "id": 296,
+    "bill_type": "HB",
+    "bill_number": 96,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB96",
+    "act_number": null
+  },
+  {
+    "id": 297,
+    "bill_type": "HB",
+    "bill_number": 97,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB97 HD2 SD2 CD1",
+    "act_number": 256
+  },
+  {
+    "id": 298,
+    "bill_type": "HB",
+    "bill_number": 98,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB98 HD1",
+    "act_number": null
+  },
+  {
+    "id": 299,
+    "bill_type": "HB",
+    "bill_number": 99,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB99",
+    "act_number": null
+  },
+  {
+    "id": 300,
+    "bill_type": "HB",
+    "bill_number": 100,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB100",
+    "act_number": null
+  },
+  {
+    "id": 301,
+    "bill_type": "HB",
+    "bill_number": 101,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB101",
+    "act_number": null
+  },
+  {
+    "id": 302,
+    "bill_type": "HB",
+    "bill_number": 102,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB102 HD1",
+    "act_number": null
+  },
+  {
+    "id": 303,
+    "bill_type": "HB",
+    "bill_number": 103,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB103 SD1 CD1",
+    "act_number": 152
+  },
+  {
+    "id": 304,
+    "bill_type": "HB",
+    "bill_number": 104,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB104",
+    "act_number": null
+  },
+  {
+    "id": 305,
+    "bill_type": "HB",
+    "bill_number": 105,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB105",
+    "act_number": null
+  },
+  {
+    "id": 306,
+    "bill_type": "HB",
+    "bill_number": 106,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB106 HD1",
+    "act_number": null
+  },
+  {
+    "id": 307,
+    "bill_type": "HB",
+    "bill_number": 107,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB107",
+    "act_number": null
+  },
+  {
+    "id": 308,
+    "bill_type": "HB",
+    "bill_number": 108,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB108 HD2 SD1",
+    "act_number": null
+  },
+  {
+    "id": 309,
+    "bill_type": "HB",
+    "bill_number": 109,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB109",
+    "act_number": null
+  },
+  {
+    "id": 310,
+    "bill_type": "HB",
+    "bill_number": 110,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB110 HD1 SD2",
+    "act_number": 137
+  },
+  {
+    "id": 311,
+    "bill_type": "HB",
+    "bill_number": 111,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB111",
+    "act_number": 20
+  },
+  {
+    "id": 312,
+    "bill_type": "HB",
+    "bill_number": 112,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB112",
+    "act_number": null
+  },
+  {
+    "id": 313,
+    "bill_type": "HB",
+    "bill_number": 113,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB113 HD1",
+    "act_number": null
+  },
+  {
+    "id": 314,
+    "bill_type": "HB",
+    "bill_number": 114,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB114 HD1",
+    "act_number": null
+  },
+  {
+    "id": 315,
+    "bill_type": "HB",
+    "bill_number": 115,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB115",
+    "act_number": null
+  },
+  {
+    "id": 316,
+    "bill_type": "HB",
+    "bill_number": 116,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB116",
+    "act_number": null
+  },
+  {
+    "id": 317,
+    "bill_type": "HB",
+    "bill_number": 117,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB117",
+    "act_number": null
+  },
+  {
+    "id": 318,
+    "bill_type": "HB",
+    "bill_number": 118,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB118",
+    "act_number": null
+  },
+  {
+    "id": 319,
+    "bill_type": "HB",
+    "bill_number": 119,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB119",
+    "act_number": null
+  },
+  {
+    "id": 320,
+    "bill_type": "HB",
+    "bill_number": 120,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB120",
+    "act_number": null
+  },
+  {
+    "id": 321,
+    "bill_type": "HB",
+    "bill_number": 121,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB121",
+    "act_number": null
+  },
+  {
+    "id": 322,
+    "bill_type": "HB",
+    "bill_number": 122,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB122",
+    "act_number": null
+  },
+  {
+    "id": 323,
+    "bill_type": "HB",
+    "bill_number": 123,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB123",
+    "act_number": null
+  },
+  {
+    "id": 324,
+    "bill_type": "HB",
+    "bill_number": 124,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB124",
+    "act_number": null
+  },
+  {
+    "id": 325,
+    "bill_type": "HB",
+    "bill_number": 125,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB125 HD1",
+    "act_number": 22
+  },
+  {
+    "id": 326,
+    "bill_type": "HB",
+    "bill_number": 126,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB126 HD1 SD2 CD1",
+    "act_number": 288
+  },
+  {
+    "id": 327,
+    "bill_type": "HB",
+    "bill_number": 127,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB127 HD1 SD1",
+    "act_number": null
+  },
+  {
+    "id": 328,
+    "bill_type": "HB",
+    "bill_number": 128,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB128 HD1",
+    "act_number": null
+  },
+  {
+    "id": 329,
+    "bill_type": "HB",
+    "bill_number": 129,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB129 HD2",
+    "act_number": null
+  },
+  {
+    "id": 330,
+    "bill_type": "HB",
+    "bill_number": 130,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB130",
+    "act_number": null
+  },
+  {
+    "id": 331,
+    "bill_type": "HB",
+    "bill_number": 131,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB131",
+    "act_number": null
+  },
+  {
+    "id": 332,
+    "bill_type": "HB",
+    "bill_number": 132,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB132 HD1",
+    "act_number": 5
+  },
+  {
+    "id": 333,
+    "bill_type": "HB",
+    "bill_number": 133,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB133 HD2 SD1 CD1",
+    "act_number": 141
+  },
+  {
+    "id": 334,
+    "bill_type": "HB",
+    "bill_number": 134,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB134 HD1 SD1 CD1",
+    "act_number": 194
+  },
+  {
+    "id": 335,
+    "bill_type": "HB",
+    "bill_number": 135,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB135 HD1",
+    "act_number": null
+  },
+  {
+    "id": 336,
+    "bill_type": "HB",
+    "bill_number": 136,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB136",
+    "act_number": null
+  },
+  {
+    "id": 337,
+    "bill_type": "HB",
+    "bill_number": 137,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB137 HD1",
+    "act_number": 16
+  },
+  {
+    "id": 338,
+    "bill_type": "HB",
+    "bill_number": 138,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB138",
+    "act_number": null
+  },
+  {
+    "id": 339,
+    "bill_type": "HB",
+    "bill_number": 139,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB139 HD2 SD1",
+    "act_number": null
+  },
+  {
+    "id": 340,
+    "bill_type": "HB",
+    "bill_number": 140,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB140",
+    "act_number": null
+  },
+  {
+    "id": 341,
+    "bill_type": "HB",
+    "bill_number": 141,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB141 HD1",
+    "act_number": null
+  },
+  {
+    "id": 342,
+    "bill_type": "HB",
+    "bill_number": 142,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB142",
+    "act_number": null
+  },
+  {
+    "id": 343,
+    "bill_type": "HB",
+    "bill_number": 143,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB143",
+    "act_number": null
+  },
+  {
+    "id": 344,
+    "bill_type": "HB",
+    "bill_number": 144,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB144",
+    "act_number": null
+  },
+  {
+    "id": 345,
+    "bill_type": "HB",
+    "bill_number": 145,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB145 HD1",
+    "act_number": 3
+  },
+  {
+    "id": 346,
+    "bill_type": "HB",
+    "bill_number": 146,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB146 HD1",
+    "act_number": null
+  },
+  {
+    "id": 347,
+    "bill_type": "HB",
+    "bill_number": 147,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB147",
+    "act_number": null
+  },
+  {
+    "id": 348,
+    "bill_type": "HB",
+    "bill_number": 148,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB148",
+    "act_number": null
+  },
+  {
+    "id": 349,
+    "bill_type": "HB",
+    "bill_number": 149,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB149",
+    "act_number": null
+  },
+  {
+    "id": 350,
+    "bill_type": "HB",
+    "bill_number": 150,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB150",
+    "act_number": null
+  },
+  {
+    "id": 351,
+    "bill_type": "HB",
+    "bill_number": 151,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB151",
+    "act_number": null
+  },
+  {
+    "id": 352,
+    "bill_type": "HB",
+    "bill_number": 152,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB152",
+    "act_number": null
+  },
+  {
+    "id": 353,
+    "bill_type": "HB",
+    "bill_number": 153,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB153",
+    "act_number": null
+  },
+  {
+    "id": 354,
+    "bill_type": "HB",
+    "bill_number": 154,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB154",
+    "act_number": null
+  },
+  {
+    "id": 355,
+    "bill_type": "HB",
+    "bill_number": 155,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB155",
+    "act_number": null
+  },
+  {
+    "id": 356,
+    "bill_type": "HB",
+    "bill_number": 156,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB156",
+    "act_number": null
+  },
+  {
+    "id": 357,
+    "bill_type": "HB",
+    "bill_number": 157,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB157 HD1",
+    "act_number": null
+  },
+  {
+    "id": 358,
+    "bill_type": "HB",
+    "bill_number": 158,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB158 HD1",
+    "act_number": null
+  },
+  {
+    "id": 359,
+    "bill_type": "HB",
+    "bill_number": 159,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB159 HD1 SD1 CD1",
+    "act_number": 213
+  },
+  {
+    "id": 360,
+    "bill_type": "HB",
+    "bill_number": 160,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB160",
+    "act_number": null
+  },
+  {
+    "id": 361,
+    "bill_type": "HB",
+    "bill_number": 161,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB161 HD1",
+    "act_number": null
+  },
+  {
+    "id": 362,
+    "bill_type": "HB",
+    "bill_number": 162,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB162 HD2 SD1 CD1",
+    "act_number": 87
+  },
+  {
+    "id": 363,
+    "bill_type": "HB",
+    "bill_number": 163,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB163 HD1",
+    "act_number": null
+  },
+  {
+    "id": 364,
+    "bill_type": "HB",
+    "bill_number": 164,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB164 HD1 SD1",
+    "act_number": null
+  },
+  {
+    "id": 365,
+    "bill_type": "HB",
+    "bill_number": 165,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB165 HD1",
+    "act_number": null
+  },
+  {
+    "id": 366,
+    "bill_type": "HB",
+    "bill_number": 166,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB166 HD1",
+    "act_number": null
+  },
+  {
+    "id": 367,
+    "bill_type": "HB",
+    "bill_number": 167,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB167",
+    "act_number": null
+  },
+  {
+    "id": 368,
+    "bill_type": "HB",
+    "bill_number": 168,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB168",
+    "act_number": null
+  },
+  {
+    "id": 369,
+    "bill_type": "HB",
+    "bill_number": 169,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB169 HD1",
+    "act_number": null
+  },
+  {
+    "id": 370,
+    "bill_type": "HB",
+    "bill_number": 170,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB170",
+    "act_number": null
+  },
+  {
+    "id": 371,
+    "bill_type": "HB",
+    "bill_number": 171,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB171",
+    "act_number": null
+  },
+  {
+    "id": 372,
+    "bill_type": "HB",
+    "bill_number": 172,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB172",
+    "act_number": null
+  },
+  {
+    "id": 373,
+    "bill_type": "HB",
+    "bill_number": 173,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB173",
+    "act_number": null
+  },
+  {
+    "id": 374,
+    "bill_type": "HB",
+    "bill_number": 174,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB174",
+    "act_number": null
+  },
+  {
+    "id": 375,
+    "bill_type": "HB",
+    "bill_number": 175,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB175 HD1",
+    "act_number": null
+  },
+  {
+    "id": 376,
+    "bill_type": "HB",
+    "bill_number": 176,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB176",
+    "act_number": null
+  },
+  {
+    "id": 377,
+    "bill_type": "HB",
+    "bill_number": 177,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB177 HD1 SD1",
+    "act_number": null
+  },
+  {
+    "id": 378,
+    "bill_type": "HB",
+    "bill_number": 178,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB178",
+    "act_number": null
+  },
+  {
+    "id": 379,
+    "bill_type": "HB",
+    "bill_number": 179,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB179",
+    "act_number": null
+  },
+  {
+    "id": 380,
+    "bill_type": "HB",
+    "bill_number": 180,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB180",
+    "act_number": null
+  },
+  {
+    "id": 381,
+    "bill_type": "HB",
+    "bill_number": 181,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB181",
+    "act_number": null
+  },
+  {
+    "id": 382,
+    "bill_type": "HB",
+    "bill_number": 182,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB182",
+    "act_number": null
+  },
+  {
+    "id": 383,
+    "bill_type": "HB",
+    "bill_number": 183,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB183",
+    "act_number": null
+  },
+  {
+    "id": 384,
+    "bill_type": "HB",
+    "bill_number": 184,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB184 HD1",
+    "act_number": null
+  },
+  {
+    "id": 385,
+    "bill_type": "HB",
+    "bill_number": 185,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB185",
+    "act_number": null
+  },
+  {
+    "id": 386,
+    "bill_type": "HB",
+    "bill_number": 186,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB186",
+    "act_number": null
+  },
+  {
+    "id": 387,
+    "bill_type": "HB",
+    "bill_number": 187,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB187",
+    "act_number": null
+  },
+  {
+    "id": 388,
+    "bill_type": "HB",
+    "bill_number": 188,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB188",
+    "act_number": null
+  },
+  {
+    "id": 389,
+    "bill_type": "HB",
+    "bill_number": 189,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB189 HD1",
+    "act_number": null
+  },
+  {
+    "id": 390,
+    "bill_type": "HB",
+    "bill_number": 190,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB190",
+    "act_number": null
+  },
+  {
+    "id": 391,
+    "bill_type": "HB",
+    "bill_number": 191,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB191",
+    "act_number": null
+  },
+  {
+    "id": 392,
+    "bill_type": "HB",
+    "bill_number": 192,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB192",
+    "act_number": null
+  },
+  {
+    "id": 393,
+    "bill_type": "HB",
+    "bill_number": 193,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB193",
+    "act_number": null
+  },
+  {
+    "id": 394,
+    "bill_type": "HB",
+    "bill_number": 194,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB194 HD1",
+    "act_number": null
+  },
+  {
+    "id": 395,
+    "bill_type": "HB",
+    "bill_number": 195,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB195",
+    "act_number": null
+  },
+  {
+    "id": 396,
+    "bill_type": "HB",
+    "bill_number": 196,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB196",
+    "act_number": null
+  },
+  {
+    "id": 397,
+    "bill_type": "HB",
+    "bill_number": 197,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB197",
+    "act_number": null
+  },
+  {
+    "id": 398,
+    "bill_type": "HB",
+    "bill_number": 198,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB198",
+    "act_number": null
+  },
+  {
+    "id": 399,
+    "bill_type": "HB",
+    "bill_number": 199,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB199 HD1",
+    "act_number": null
+  },
+  {
+    "id": 400,
+    "bill_type": "HB",
+    "bill_number": 200,
+    "year": 2025,
+    "title": null,
+    "current_version": "HB200",
+    "act_number": null
+  },
+  {
+    "id": 1,
+    "bill_type": "SB",
+    "bill_number": 1,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB1",
+    "act_number": null
+  },
+  {
+    "id": 2,
+    "bill_type": "SB",
+    "bill_number": 2,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB2 SD1",
+    "act_number": null
+  },
+  {
+    "id": 3,
+    "bill_type": "SB",
+    "bill_number": 3,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB3 SD1",
+    "act_number": null
+  },
+  {
+    "id": 4,
+    "bill_type": "SB",
+    "bill_number": 4,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB4",
+    "act_number": null
+  },
+  {
+    "id": 5,
+    "bill_type": "SB",
+    "bill_number": 5,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB5 SD1",
+    "act_number": null
+  },
+  {
+    "id": 6,
+    "bill_type": "SB",
+    "bill_number": 6,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB6",
+    "act_number": null
+  },
+  {
+    "id": 7,
+    "bill_type": "SB",
+    "bill_number": 7,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB7",
+    "act_number": null
+  },
+  {
+    "id": 8,
+    "bill_type": "SB",
+    "bill_number": 8,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB8 SD1",
+    "act_number": null
+  },
+  {
+    "id": 9,
+    "bill_type": "SB",
+    "bill_number": 9,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB9",
+    "act_number": null
+  },
+  {
+    "id": 10,
+    "bill_type": "SB",
+    "bill_number": 10,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB10",
+    "act_number": null
+  },
+  {
+    "id": 11,
+    "bill_type": "SB",
+    "bill_number": 11,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB11 SD2",
+    "act_number": null
+  },
+  {
+    "id": 12,
+    "bill_type": "SB",
+    "bill_number": 12,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB12",
+    "act_number": null
+  },
+  {
+    "id": 13,
+    "bill_type": "SB",
+    "bill_number": 13,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB13 SD1",
+    "act_number": null
+  },
+  {
+    "id": 14,
+    "bill_type": "SB",
+    "bill_number": 14,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB14",
+    "act_number": null
+  },
+  {
+    "id": 15,
+    "bill_type": "SB",
+    "bill_number": 15,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB15 SD1 HD2 CD1",
+    "act_number": 293
+  },
+  {
+    "id": 16,
+    "bill_type": "SB",
+    "bill_number": 16,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB16",
+    "act_number": null
+  },
+  {
+    "id": 17,
+    "bill_type": "SB",
+    "bill_number": 17,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB17",
+    "act_number": null
+  },
+  {
+    "id": 18,
+    "bill_type": "SB",
+    "bill_number": 18,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB18 SD1",
+    "act_number": null
+  },
+  {
+    "id": 19,
+    "bill_type": "SB",
+    "bill_number": 19,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB19 SD1",
+    "act_number": null
+  },
+  {
+    "id": 20,
+    "bill_type": "SB",
+    "bill_number": 20,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB20",
+    "act_number": null
+  },
+  {
+    "id": 21,
+    "bill_type": "SB",
+    "bill_number": 21,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB21 SD2 HD2",
+    "act_number": null
+  },
+  {
+    "id": 22,
+    "bill_type": "SB",
+    "bill_number": 22,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB22",
+    "act_number": null
+  },
+  {
+    "id": 23,
+    "bill_type": "SB",
+    "bill_number": 23,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB23",
+    "act_number": null
+  },
+  {
+    "id": 24,
+    "bill_type": "SB",
+    "bill_number": 24,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB24 SD1",
+    "act_number": null
+  },
+  {
+    "id": 25,
+    "bill_type": "SB",
+    "bill_number": 25,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB25 SD1",
+    "act_number": null
+  },
+  {
+    "id": 26,
+    "bill_type": "SB",
+    "bill_number": 26,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB26 SD2 HD2",
+    "act_number": null
+  },
+  {
+    "id": 27,
+    "bill_type": "SB",
+    "bill_number": 27,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB27 SD1",
+    "act_number": null
+  },
+  {
+    "id": 28,
+    "bill_type": "SB",
+    "bill_number": 28,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB28",
+    "act_number": null
+  },
+  {
+    "id": 29,
+    "bill_type": "SB",
+    "bill_number": 29,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB29",
+    "act_number": null
+  },
+  {
+    "id": 30,
+    "bill_type": "SB",
+    "bill_number": 30,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB30 HD2 CD1",
+    "act_number": 222
+  },
+  {
+    "id": 31,
+    "bill_type": "SB",
+    "bill_number": 31,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB31 SD2 HD2 CD1",
+    "act_number": null
+  },
+  {
+    "id": 32,
+    "bill_type": "SB",
+    "bill_number": 32,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB32",
+    "act_number": null
+  },
+  {
+    "id": 33,
+    "bill_type": "SB",
+    "bill_number": 33,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB33",
+    "act_number": null
+  },
+  {
+    "id": 34,
+    "bill_type": "SB",
+    "bill_number": 34,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB34",
+    "act_number": null
+  },
+  {
+    "id": 35,
+    "bill_type": "SB",
+    "bill_number": 35,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB35 SD1",
+    "act_number": null
+  },
+  {
+    "id": 36,
+    "bill_type": "SB",
+    "bill_number": 36,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB36",
+    "act_number": null
+  },
+  {
+    "id": 37,
+    "bill_type": "SB",
+    "bill_number": 37,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB37",
+    "act_number": null
+  },
+  {
+    "id": 38,
+    "bill_type": "SB",
+    "bill_number": 38,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB38 SD2 HD2 CD1",
+    "act_number": 294
+  },
+  {
+    "id": 39,
+    "bill_type": "SB",
+    "bill_number": 39,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB39",
+    "act_number": null
+  },
+  {
+    "id": 40,
+    "bill_type": "SB",
+    "bill_number": 40,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB40 SD2 HD1",
+    "act_number": null
+  },
+  {
+    "id": 41,
+    "bill_type": "SB",
+    "bill_number": 41,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB41",
+    "act_number": null
+  },
+  {
+    "id": 42,
+    "bill_type": "SB",
+    "bill_number": 42,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB42",
+    "act_number": null
+  },
+  {
+    "id": 43,
+    "bill_type": "SB",
+    "bill_number": 43,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB43",
+    "act_number": null
+  },
+  {
+    "id": 44,
+    "bill_type": "SB",
+    "bill_number": 44,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB44",
+    "act_number": null
+  },
+  {
+    "id": 45,
+    "bill_type": "SB",
+    "bill_number": 45,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB45",
+    "act_number": null
+  },
+  {
+    "id": 46,
+    "bill_type": "SB",
+    "bill_number": 46,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB46",
+    "act_number": null
+  },
+  {
+    "id": 47,
+    "bill_type": "SB",
+    "bill_number": 47,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB47 SD1",
+    "act_number": null
+  },
+  {
+    "id": 48,
+    "bill_type": "SB",
+    "bill_number": 48,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB48",
+    "act_number": null
+  },
+  {
+    "id": 49,
+    "bill_type": "SB",
+    "bill_number": 49,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB49 SD1",
+    "act_number": null
+  },
+  {
+    "id": 50,
+    "bill_type": "SB",
+    "bill_number": 50,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB50 SD1",
+    "act_number": null
+  },
+  {
+    "id": 51,
+    "bill_type": "SB",
+    "bill_number": 51,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB51 SD1",
+    "act_number": null
+  },
+  {
+    "id": 52,
+    "bill_type": "SB",
+    "bill_number": 52,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB52 SD1",
+    "act_number": null
+  },
+  {
+    "id": 53,
+    "bill_type": "SB",
+    "bill_number": 53,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB53",
+    "act_number": null
+  },
+  {
+    "id": 54,
+    "bill_type": "SB",
+    "bill_number": 54,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB54",
+    "act_number": null
+  },
+  {
+    "id": 55,
+    "bill_type": "SB",
+    "bill_number": 55,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB55 SD1",
+    "act_number": null
+  },
+  {
+    "id": 56,
+    "bill_type": "SB",
+    "bill_number": 56,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB56",
+    "act_number": null
+  },
+  {
+    "id": 57,
+    "bill_type": "SB",
+    "bill_number": 57,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB57",
+    "act_number": null
+  },
+  {
+    "id": 58,
+    "bill_type": "SB",
+    "bill_number": 58,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB58 SD1",
+    "act_number": null
+  },
+  {
+    "id": 59,
+    "bill_type": "SB",
+    "bill_number": 59,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB59",
+    "act_number": null
+  },
+  {
+    "id": 60,
+    "bill_type": "SB",
+    "bill_number": 60,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB60",
+    "act_number": null
+  },
+  {
+    "id": 61,
+    "bill_type": "SB",
+    "bill_number": 61,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB61",
+    "act_number": null
+  },
+  {
+    "id": 62,
+    "bill_type": "SB",
+    "bill_number": 62,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB62",
+    "act_number": null
+  },
+  {
+    "id": 63,
+    "bill_type": "SB",
+    "bill_number": 63,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB63",
+    "act_number": null
+  },
+  {
+    "id": 64,
+    "bill_type": "SB",
+    "bill_number": 64,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB64",
+    "act_number": null
+  },
+  {
+    "id": 65,
+    "bill_type": "SB",
+    "bill_number": 65,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB65 SD2 HD1 CD1",
+    "act_number": 182
+  },
+  {
+    "id": 66,
+    "bill_type": "SB",
+    "bill_number": 66,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB66 SD2 HD3 CD1",
+    "act_number": 295
+  },
+  {
+    "id": 67,
+    "bill_type": "SB",
+    "bill_number": 67,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB67 SD1",
+    "act_number": null
+  },
+  {
+    "id": 68,
+    "bill_type": "SB",
+    "bill_number": 68,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB68 SD1",
+    "act_number": null
+  },
+  {
+    "id": 69,
+    "bill_type": "SB",
+    "bill_number": 69,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB69 SD1",
+    "act_number": null
+  },
+  {
+    "id": 70,
+    "bill_type": "SB",
+    "bill_number": 70,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB70 SD1",
+    "act_number": null
+  },
+  {
+    "id": 71,
+    "bill_type": "SB",
+    "bill_number": 71,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB71 SD2 HD1",
+    "act_number": null
+  },
+  {
+    "id": 72,
+    "bill_type": "SB",
+    "bill_number": 72,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB72",
+    "act_number": null
+  },
+  {
+    "id": 73,
+    "bill_type": "SB",
+    "bill_number": 73,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB73 SD1",
+    "act_number": null
+  },
+  {
+    "id": 74,
+    "bill_type": "SB",
+    "bill_number": 74,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB74",
+    "act_number": null
+  },
+  {
+    "id": 75,
+    "bill_type": "SB",
+    "bill_number": 75,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB75",
+    "act_number": null
+  },
+  {
+    "id": 76,
+    "bill_type": "SB",
+    "bill_number": 76,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB76 SD1",
+    "act_number": null
+  },
+  {
+    "id": 77,
+    "bill_type": "SB",
+    "bill_number": 77,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB77",
+    "act_number": null
+  },
+  {
+    "id": 78,
+    "bill_type": "SB",
+    "bill_number": 78,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB78",
+    "act_number": null
+  },
+  {
+    "id": 79,
+    "bill_type": "SB",
+    "bill_number": 79,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB79 SD1 HD2 CD1",
+    "act_number": 311
+  },
+  {
+    "id": 80,
+    "bill_type": "SB",
+    "bill_number": 80,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB80",
+    "act_number": null
+  },
+  {
+    "id": 81,
+    "bill_type": "SB",
+    "bill_number": 81,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB81",
+    "act_number": null
+  },
+  {
+    "id": 82,
+    "bill_type": "SB",
+    "bill_number": 82,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB82",
+    "act_number": null
+  },
+  {
+    "id": 83,
+    "bill_type": "SB",
+    "bill_number": 83,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB83 SD2",
+    "act_number": null
+  },
+  {
+    "id": 84,
+    "bill_type": "SB",
+    "bill_number": 84,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB84",
+    "act_number": null
+  },
+  {
+    "id": 85,
+    "bill_type": "SB",
+    "bill_number": 85,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB85",
+    "act_number": null
+  },
+  {
+    "id": 86,
+    "bill_type": "SB",
+    "bill_number": 86,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB86",
+    "act_number": null
+  },
+  {
+    "id": 87,
+    "bill_type": "SB",
+    "bill_number": 87,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB87",
+    "act_number": null
+  },
+  {
+    "id": 88,
+    "bill_type": "SB",
+    "bill_number": 88,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB88 HD1 CD1",
+    "act_number": 181
+  },
+  {
+    "id": 89,
+    "bill_type": "SB",
+    "bill_number": 89,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB89",
+    "act_number": null
+  },
+  {
+    "id": 90,
+    "bill_type": "SB",
+    "bill_number": 90,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB90",
+    "act_number": null
+  },
+  {
+    "id": 91,
+    "bill_type": "SB",
+    "bill_number": 91,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB91",
+    "act_number": null
+  },
+  {
+    "id": 92,
+    "bill_type": "SB",
+    "bill_number": 92,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB92",
+    "act_number": null
+  },
+  {
+    "id": 93,
+    "bill_type": "SB",
+    "bill_number": 93,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB93",
+    "act_number": null
+  },
+  {
+    "id": 94,
+    "bill_type": "SB",
+    "bill_number": 94,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB94",
+    "act_number": null
+  },
+  {
+    "id": 95,
+    "bill_type": "SB",
+    "bill_number": 95,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB95",
+    "act_number": null
+  },
+  {
+    "id": 96,
+    "bill_type": "SB",
+    "bill_number": 96,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB96",
+    "act_number": null
+  },
+  {
+    "id": 97,
+    "bill_type": "SB",
+    "bill_number": 97,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB97 SD2 HD2 CD2",
+    "act_number": 170
+  },
+  {
+    "id": 98,
+    "bill_type": "SB",
+    "bill_number": 98,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB98",
+    "act_number": null
+  },
+  {
+    "id": 99,
+    "bill_type": "SB",
+    "bill_number": 99,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB99",
+    "act_number": null
+  },
+  {
+    "id": 100,
+    "bill_type": "SB",
+    "bill_number": 100,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB100 SD2",
+    "act_number": 12
+  },
+  {
+    "id": 101,
+    "bill_type": "SB",
+    "bill_number": 101,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB101 SD1",
+    "act_number": null
+  },
+  {
+    "id": 102,
+    "bill_type": "SB",
+    "bill_number": 102,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB102 SD2 HD2 CD1",
+    "act_number": 77
+  },
+  {
+    "id": 103,
+    "bill_type": "SB",
+    "bill_number": 103,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB103 SD1",
+    "act_number": null
+  },
+  {
+    "id": 104,
+    "bill_type": "SB",
+    "bill_number": 104,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB104 SD2 HD3 CD1",
+    "act_number": 292
+  },
+  {
+    "id": 105,
+    "bill_type": "SB",
+    "bill_number": 105,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB105",
+    "act_number": null
+  },
+  {
+    "id": 106,
+    "bill_type": "SB",
+    "bill_number": 106,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB106 SD1 HD2",
+    "act_number": null
+  },
+  {
+    "id": 107,
+    "bill_type": "SB",
+    "bill_number": 107,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB107",
+    "act_number": null
+  },
+  {
+    "id": 108,
+    "bill_type": "SB",
+    "bill_number": 108,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB108 SD1",
+    "act_number": null
+  },
+  {
+    "id": 109,
+    "bill_type": "SB",
+    "bill_number": 109,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB109 SD2 HD1",
+    "act_number": null
+  },
+  {
+    "id": 110,
+    "bill_type": "SB",
+    "bill_number": 110,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB110",
+    "act_number": null
+  },
+  {
+    "id": 111,
+    "bill_type": "SB",
+    "bill_number": 111,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB111",
+    "act_number": null
+  },
+  {
+    "id": 112,
+    "bill_type": "SB",
+    "bill_number": 112,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB112 SD2",
+    "act_number": 17
+  },
+  {
+    "id": 113,
+    "bill_type": "SB",
+    "bill_number": 113,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB113",
+    "act_number": null
+  },
+  {
+    "id": 114,
+    "bill_type": "SB",
+    "bill_number": 114,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB114 SD1",
+    "act_number": null
+  },
+  {
+    "id": 115,
+    "bill_type": "SB",
+    "bill_number": 115,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB115 SD1",
+    "act_number": null
+  },
+  {
+    "id": 116,
+    "bill_type": "SB",
+    "bill_number": 116,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB116 SD2 HD1",
+    "act_number": 259
+  },
+  {
+    "id": 117,
+    "bill_type": "SB",
+    "bill_number": 117,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB117 SD1",
+    "act_number": null
+  },
+  {
+    "id": 118,
+    "bill_type": "SB",
+    "bill_number": 118,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB118 SD1",
+    "act_number": null
+  },
+  {
+    "id": 119,
+    "bill_type": "SB",
+    "bill_number": 119,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB119 SD1 HD1 CD1",
+    "act_number": 265
+  },
+  {
+    "id": 120,
+    "bill_type": "SB",
+    "bill_number": 120,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB120",
+    "act_number": null
+  },
+  {
+    "id": 121,
+    "bill_type": "SB",
+    "bill_number": 121,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB121",
+    "act_number": null
+  },
+  {
+    "id": 122,
+    "bill_type": "SB",
+    "bill_number": 122,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB122",
+    "act_number": null
+  },
+  {
+    "id": 123,
+    "bill_type": "SB",
+    "bill_number": 123,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB123 SD1",
+    "act_number": null
+  },
+  {
+    "id": 124,
+    "bill_type": "SB",
+    "bill_number": 124,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB124 SD1",
+    "act_number": null
+  },
+  {
+    "id": 125,
+    "bill_type": "SB",
+    "bill_number": 125,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB125 SD2 HD1",
+    "act_number": null
+  },
+  {
+    "id": 126,
+    "bill_type": "SB",
+    "bill_number": 126,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB126",
+    "act_number": null
+  },
+  {
+    "id": 127,
+    "bill_type": "SB",
+    "bill_number": 127,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB127 SD1",
+    "act_number": null
+  },
+  {
+    "id": 128,
+    "bill_type": "SB",
+    "bill_number": 128,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB128",
+    "act_number": null
+  },
+  {
+    "id": 129,
+    "bill_type": "SB",
+    "bill_number": 129,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB129 SD2",
+    "act_number": null
+  },
+  {
+    "id": 130,
+    "bill_type": "SB",
+    "bill_number": 130,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB130",
+    "act_number": null
+  },
+  {
+    "id": 131,
+    "bill_type": "SB",
+    "bill_number": 131,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB131",
+    "act_number": null
+  },
+  {
+    "id": 132,
+    "bill_type": "SB",
+    "bill_number": 132,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB132",
+    "act_number": null
+  },
+  {
+    "id": 133,
+    "bill_type": "SB",
+    "bill_number": 133,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB133 SD2",
+    "act_number": null
+  },
+  {
+    "id": 134,
+    "bill_type": "SB",
+    "bill_number": 134,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB134",
+    "act_number": null
+  },
+  {
+    "id": 135,
+    "bill_type": "SB",
+    "bill_number": 135,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB135",
+    "act_number": null
+  },
+  {
+    "id": 136,
+    "bill_type": "SB",
+    "bill_number": 136,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB136",
+    "act_number": null
+  },
+  {
+    "id": 137,
+    "bill_type": "SB",
+    "bill_number": 137,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB137 SD2 HD1",
+    "act_number": null
+  },
+  {
+    "id": 138,
+    "bill_type": "SB",
+    "bill_number": 138,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB138 SD1",
+    "act_number": null
+  },
+  {
+    "id": 139,
+    "bill_type": "SB",
+    "bill_number": 139,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB139",
+    "act_number": null
+  },
+  {
+    "id": 140,
+    "bill_type": "SB",
+    "bill_number": 140,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB140 SD2 HD1 CD1",
+    "act_number": 240
+  },
+  {
+    "id": 141,
+    "bill_type": "SB",
+    "bill_number": 141,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB141 SD1",
+    "act_number": null
+  },
+  {
+    "id": 142,
+    "bill_type": "SB",
+    "bill_number": 142,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB142 SD2",
+    "act_number": null
+  },
+  {
+    "id": 143,
+    "bill_type": "SB",
+    "bill_number": 143,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB143",
+    "act_number": null
+  },
+  {
+    "id": 144,
+    "bill_type": "SB",
+    "bill_number": 144,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB144 SD2",
+    "act_number": null
+  },
+  {
+    "id": 145,
+    "bill_type": "SB",
+    "bill_number": 145,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB145",
+    "act_number": null
+  },
+  {
+    "id": 146,
+    "bill_type": "SB",
+    "bill_number": 146,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB146 SD1 HD2",
+    "act_number": null
+  },
+  {
+    "id": 147,
+    "bill_type": "SB",
+    "bill_number": 147,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB147 SD2",
+    "act_number": null
+  },
+  {
+    "id": 148,
+    "bill_type": "SB",
+    "bill_number": 148,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB148 SD2 HD2",
+    "act_number": null
+  },
+  {
+    "id": 149,
+    "bill_type": "SB",
+    "bill_number": 149,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB149",
+    "act_number": null
+  },
+  {
+    "id": 150,
+    "bill_type": "SB",
+    "bill_number": 150,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB150 SD1",
+    "act_number": null
+  },
+  {
+    "id": 151,
+    "bill_type": "SB",
+    "bill_number": 151,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB151 SD1",
+    "act_number": null
+  },
+  {
+    "id": 152,
+    "bill_type": "SB",
+    "bill_number": 152,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB152 SD1",
+    "act_number": null
+  },
+  {
+    "id": 153,
+    "bill_type": "SB",
+    "bill_number": 153,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB153",
+    "act_number": null
+  },
+  {
+    "id": 154,
+    "bill_type": "SB",
+    "bill_number": 154,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB154",
+    "act_number": null
+  },
+  {
+    "id": 155,
+    "bill_type": "SB",
+    "bill_number": 155,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB155",
+    "act_number": null
+  },
+  {
+    "id": 156,
+    "bill_type": "SB",
+    "bill_number": 156,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB156",
+    "act_number": null
+  },
+  {
+    "id": 157,
+    "bill_type": "SB",
+    "bill_number": 157,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB157 SD2",
+    "act_number": null
+  },
+  {
+    "id": 158,
+    "bill_type": "SB",
+    "bill_number": 158,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB158",
+    "act_number": null
+  },
+  {
+    "id": 159,
+    "bill_type": "SB",
+    "bill_number": 159,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB159",
+    "act_number": null
+  },
+  {
+    "id": 160,
+    "bill_type": "SB",
+    "bill_number": 160,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB160",
+    "act_number": null
+  },
+  {
+    "id": 161,
+    "bill_type": "SB",
+    "bill_number": 161,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB161 SD1",
+    "act_number": null
+  },
+  {
+    "id": 162,
+    "bill_type": "SB",
+    "bill_number": 162,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB162",
+    "act_number": null
+  },
+  {
+    "id": 163,
+    "bill_type": "SB",
+    "bill_number": 163,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB163",
+    "act_number": null
+  },
+  {
+    "id": 164,
+    "bill_type": "SB",
+    "bill_number": 164,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB164",
+    "act_number": null
+  },
+  {
+    "id": 165,
+    "bill_type": "SB",
+    "bill_number": 165,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB165",
+    "act_number": null
+  },
+  {
+    "id": 166,
+    "bill_type": "SB",
+    "bill_number": 166,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB166",
+    "act_number": null
+  },
+  {
+    "id": 167,
+    "bill_type": "SB",
+    "bill_number": 167,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB167",
+    "act_number": null
+  },
+  {
+    "id": 168,
+    "bill_type": "SB",
+    "bill_number": 168,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB168",
+    "act_number": null
+  },
+  {
+    "id": 169,
+    "bill_type": "SB",
+    "bill_number": 169,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB169 SD1",
+    "act_number": null
+  },
+  {
+    "id": 170,
+    "bill_type": "SB",
+    "bill_number": 170,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB170",
+    "act_number": null
+  },
+  {
+    "id": 171,
+    "bill_type": "SB",
+    "bill_number": 171,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB171",
+    "act_number": null
+  },
+  {
+    "id": 172,
+    "bill_type": "SB",
+    "bill_number": 172,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB172",
+    "act_number": null
+  },
+  {
+    "id": 173,
+    "bill_type": "SB",
+    "bill_number": 173,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB173 SD1",
+    "act_number": null
+  },
+  {
+    "id": 174,
+    "bill_type": "SB",
+    "bill_number": 174,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB174",
+    "act_number": null
+  },
+  {
+    "id": 175,
+    "bill_type": "SB",
+    "bill_number": 175,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB175 SD1",
+    "act_number": null
+  },
+  {
+    "id": 176,
+    "bill_type": "SB",
+    "bill_number": 176,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB176 SD1 HD1 CD1",
+    "act_number": 226
+  },
+  {
+    "id": 177,
+    "bill_type": "SB",
+    "bill_number": 177,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB177 SD1 HD1",
+    "act_number": null
+  },
+  {
+    "id": 178,
+    "bill_type": "SB",
+    "bill_number": 178,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB178",
+    "act_number": null
+  },
+  {
+    "id": 179,
+    "bill_type": "SB",
+    "bill_number": 179,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB179 SD1",
+    "act_number": null
+  },
+  {
+    "id": 180,
+    "bill_type": "SB",
+    "bill_number": 180,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB180",
+    "act_number": null
+  },
+  {
+    "id": 181,
+    "bill_type": "SB",
+    "bill_number": 181,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB181",
+    "act_number": null
+  },
+  {
+    "id": 182,
+    "bill_type": "SB",
+    "bill_number": 182,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB182 SD1",
+    "act_number": null
+  },
+  {
+    "id": 183,
+    "bill_type": "SB",
+    "bill_number": 183,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB183 SD1 HD1",
+    "act_number": null
+  },
+  {
+    "id": 184,
+    "bill_type": "SB",
+    "bill_number": 184,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB184",
+    "act_number": null
+  },
+  {
+    "id": 185,
+    "bill_type": "SB",
+    "bill_number": 185,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB185 SD1",
+    "act_number": null
+  },
+  {
+    "id": 186,
+    "bill_type": "SB",
+    "bill_number": 186,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB186",
+    "act_number": null
+  },
+  {
+    "id": 187,
+    "bill_type": "SB",
+    "bill_number": 187,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB187",
+    "act_number": null
+  },
+  {
+    "id": 188,
+    "bill_type": "SB",
+    "bill_number": 188,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB188",
+    "act_number": null
+  },
+  {
+    "id": 189,
+    "bill_type": "SB",
+    "bill_number": 189,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB189 SD1",
+    "act_number": null
+  },
+  {
+    "id": 190,
+    "bill_type": "SB",
+    "bill_number": 190,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB190",
+    "act_number": null
+  },
+  {
+    "id": 191,
+    "bill_type": "SB",
+    "bill_number": 191,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB191 SD1 HD1",
+    "act_number": null
+  },
+  {
+    "id": 192,
+    "bill_type": "SB",
+    "bill_number": 192,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB192",
+    "act_number": null
+  },
+  {
+    "id": 193,
+    "bill_type": "SB",
+    "bill_number": 193,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB193",
+    "act_number": null
+  },
+  {
+    "id": 194,
+    "bill_type": "SB",
+    "bill_number": 194,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB194",
+    "act_number": null
+  },
+  {
+    "id": 195,
+    "bill_type": "SB",
+    "bill_number": 195,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB195",
+    "act_number": null
+  },
+  {
+    "id": 196,
+    "bill_type": "SB",
+    "bill_number": 196,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB196",
+    "act_number": null
+  },
+  {
+    "id": 197,
+    "bill_type": "SB",
+    "bill_number": 197,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB197",
+    "act_number": null
+  },
+  {
+    "id": 198,
+    "bill_type": "SB",
+    "bill_number": 198,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB198",
+    "act_number": null
+  },
+  {
+    "id": 199,
+    "bill_type": "SB",
+    "bill_number": 199,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB199 SD1",
+    "act_number": null
+  },
+  {
+    "id": 200,
+    "bill_type": "SB",
+    "bill_number": 200,
+    "year": 2025,
+    "title": null,
+    "current_version": "SB200",
+    "act_number": null
+  }
+]
