@@ -86,3 +86,5 @@ frontend/static/
 # Build outputs
 frontend/dist/
 frontend/build/
+
+TODO.md
