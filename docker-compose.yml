@@ -5,13 +5,13 @@ services:
       dockerfile: Dockerfile
     container_name: ratemylegislator-data-scraper
     volumes:
-      - ./data-scraper/data:/app/data
-      - ./data-scraper/logs:/app/logs
+      - scraper_data:/app/data  # Use named volume for database
+      - scraper_logs:/app/logs  # Use named volume for logs
       - ./data-scraper/src:/app/src  # For development
       - ./frontend/src/data:/app/export  # Export data directly to frontend
     environment:
       - PYTHONPATH=/app/src
-      - DATABASE_URL=sqlite:///app/data/hawaii_legislature.db
+      - DATABASE_URL=sqlite:////app/data/hawaii_legislature.db
       - EXPORT_DIR=/app/export
     restart: "no"  # Don't restart automatically - run on demand
     healthcheck:
@@ -69,5 +69,5 @@ services:
 
 volumes:
   # postgres_data:
-  scraper_data:
-  scraper_logs:
+  scraper_data:  # Named volume for scraper database and data files
+  scraper_logs:  # Named volume for scraper logs

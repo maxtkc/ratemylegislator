@@ -25,6 +25,23 @@ class MemberScraper:
         )
         self.base_url = "https://www.capitol.hawaii.gov"
     
+    def decode_cf_email(self, encoded_string):
+        """Decode Cloudflare protected email addresses"""
+        try:
+            # The first two characters are the key
+            key = int(encoded_string[:2], 16)
+            
+            # Decode the rest of the string
+            decoded = ""
+            for i in range(2, len(encoded_string), 2):
+                hex_char = encoded_string[i:i+2]
+                char_code = int(hex_char, 16) ^ key
+                decoded += chr(char_code)
+            
+            return decoded
+        except (ValueError, IndexError):
+            return None
+    
     def fetch_member_page(self, member_id, year, max_retries=3):
         """Fetch a member page with retry logic"""
         url = f"https://www.capitol.hawaii.gov/legislature/memberpage.aspx?member={member_id}&year={year}"
@@ -110,10 +127,33 @@ class MemberScraper:
         if phone_span:
             data['phone'] = phone_span.get_text(strip=True)
         
-        # Get email
+        # Get email - extract from link href or decode Cloudflare protected email
         email_link = soup.find('a', id='MainContent_memberForm_HyperLinkEmail')
         if email_link:
-            data['email'] = email_link.get_text(strip=True)
+            # Try to get email from href attribute first (like mailto:email@domain.com)
+            href = email_link.get('href', '')
+            if href and href.startswith('mailto:'):
+                data['email'] = href.replace('mailto:', '')
+            else:
+                # Check for Cloudflare email protection
+                cf_email_span = email_link.find('span', class_='__cf_email__')
+                if cf_email_span and cf_email_span.get('data-cfemail'):
+                    # Decode Cloudflare protected email
+                    encoded = cf_email_span.get('data-cfemail')
+                    decoded_email = self.decode_cf_email(encoded)
+                    if decoded_email:
+                        data['email'] = decoded_email
+                else:
+                    # Fall back to text content, but clean it up
+                    email_text = email_link.get_text(strip=True)
+                    # Replace "[email protected]" with actual email if found
+                    if email_text and '@' in email_text and 'protected' not in email_text.lower():
+                        data['email'] = email_text
+        
+        # Get fax number
+        fax_span = soup.find('span', id='MainContent_memberForm_LabelFax')
+        if fax_span:
+            data['fax'] = fax_span.get_text(strip=True)
         
         return data
     
@@ -247,15 +287,6 @@ class MemberScraper:
         
         if room_span:
             office_data['office'] = room_span.get_text(strip=True)
-        
-        # Look for fax information
-        fax_text = soup.find(string=re.compile(r'Fax:'))
-        if fax_text:
-            parent = fax_text.parent
-            if parent:
-                fax_span = parent.find_next('span') or parent.find_next()
-                if fax_span:
-                    office_data['fax'] = fax_span.get_text(strip=True)
         
         return office_data
     

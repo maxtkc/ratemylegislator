@@ -1788,13 +1788,11 @@ type MembersJsonGroupConnection_sumArgs = {
 type MembersJsonLatest_term = {
   readonly about_content: Maybe<Scalars['String']>;
   readonly allowance_report_url: Maybe<Scalars['String']>;
-  readonly current_experience: Maybe<Scalars['String']>;
   readonly district_description: Maybe<Scalars['String']>;
   readonly district_map_url: Maybe<Scalars['String']>;
   readonly district_number: Maybe<Scalars['Int']>;
   readonly district_type: Maybe<Scalars['String']>;
   readonly email: Maybe<Scalars['String']>;
-  readonly fax: Maybe<Scalars['String']>;
   readonly news_content: Maybe<Scalars['String']>;
   readonly office: Maybe<Scalars['String']>;
   readonly party: Maybe<Scalars['String']>;
@@ -1808,13 +1806,11 @@ type MembersJsonLatest_term = {
 type MembersJsonLatest_termFieldSelector = {
   readonly about_content: InputMaybe<FieldSelectorEnum>;
   readonly allowance_report_url: InputMaybe<FieldSelectorEnum>;
-  readonly current_experience: InputMaybe<FieldSelectorEnum>;
   readonly district_description: InputMaybe<FieldSelectorEnum>;
   readonly district_map_url: InputMaybe<FieldSelectorEnum>;
   readonly district_number: InputMaybe<FieldSelectorEnum>;
   readonly district_type: InputMaybe<FieldSelectorEnum>;
   readonly email: InputMaybe<FieldSelectorEnum>;
-  readonly fax: InputMaybe<FieldSelectorEnum>;
   readonly news_content: InputMaybe<FieldSelectorEnum>;
   readonly office: InputMaybe<FieldSelectorEnum>;
   readonly party: InputMaybe<FieldSelectorEnum>;
@@ -1828,13 +1824,11 @@ type MembersJsonLatest_termFieldSelector = {
 type MembersJsonLatest_termFilterInput = {
   readonly about_content: InputMaybe<StringQueryOperatorInput>;
   readonly allowance_report_url: InputMaybe<StringQueryOperatorInput>;
-  readonly current_experience: InputMaybe<StringQueryOperatorInput>;
   readonly district_description: InputMaybe<StringQueryOperatorInput>;
   readonly district_map_url: InputMaybe<StringQueryOperatorInput>;
   readonly district_number: InputMaybe<IntQueryOperatorInput>;
   readonly district_type: InputMaybe<StringQueryOperatorInput>;
   readonly email: InputMaybe<StringQueryOperatorInput>;
-  readonly fax: InputMaybe<StringQueryOperatorInput>;
   readonly news_content: InputMaybe<StringQueryOperatorInput>;
   readonly office: InputMaybe<StringQueryOperatorInput>;
   readonly party: InputMaybe<StringQueryOperatorInput>;
@@ -1848,13 +1842,11 @@ type MembersJsonLatest_termFilterInput = {
 type MembersJsonLatest_termSortInput = {
   readonly about_content: InputMaybe<SortOrderEnum>;
   readonly allowance_report_url: InputMaybe<SortOrderEnum>;
-  readonly current_experience: InputMaybe<SortOrderEnum>;
   readonly district_description: InputMaybe<SortOrderEnum>;
   readonly district_map_url: InputMaybe<SortOrderEnum>;
   readonly district_number: InputMaybe<SortOrderEnum>;
   readonly district_type: InputMaybe<SortOrderEnum>;
   readonly email: InputMaybe<SortOrderEnum>;
-  readonly fax: InputMaybe<SortOrderEnum>;
   readonly news_content: InputMaybe<SortOrderEnum>;
   readonly office: InputMaybe<SortOrderEnum>;
   readonly party: InputMaybe<SortOrderEnum>;

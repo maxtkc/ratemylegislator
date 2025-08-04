@@ -134,7 +134,7 @@ Always run `make test` and frontend linting commands before committing changes.
 
 GitHub Pages deployment requires updating `frontend/gatsby-config.ts` with correct repository information. The static site is built with `--prefix-paths` for proper GitHub Pages routing.
 
-Remember: Don't run sudo commands directly, as me to run them for you because you won't be able to run them directly.
+Important! Don't run sudo commands directly, as me to run them for you because you won't be able to run them directly.
 
 If you think of tooling you think I should use to improve my process, please suggest it to me.
 

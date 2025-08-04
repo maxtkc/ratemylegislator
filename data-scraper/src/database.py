@@ -15,8 +15,10 @@ class DatabaseManager:
     def create_tables(self):
         """Create all tables in the database"""
         import os
-        if self.database_url.startswith('sqlite:///'):
-            db_path = self.database_url[10:]  # Remove 'sqlite:///'
+        if self.database_url.startswith('sqlite:////'):
+            db_path = self.database_url[11:]  # Remove 'sqlite:////' (11 chars) for absolute path
+        elif self.database_url.startswith('sqlite:///'):
+            db_path = self.database_url[10:]  # Remove 'sqlite:///' (10 chars) for relative path
             if not db_path.startswith('/'):
                 db_path = '/' + db_path  # Ensure absolute path
         else:
