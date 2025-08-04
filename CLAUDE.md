@@ -138,4 +138,4 @@ Important! Don't run sudo commands directly, as me to run them for you because y
 
 If you think of tooling you think I should use to improve my process, please suggest it to me.
 
-For git commits messages, don't include anything about claude
+Important: For git commit messages, don't mention claude at the end
