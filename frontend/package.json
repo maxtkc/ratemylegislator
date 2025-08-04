@@ -42,12 +42,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/ratemylegislator.git"
+    "url": "git+https://github.com/maxtkc/ratemylegislator.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/ratemylegislator/issues"
+    "url": "https://github.com/maxtkc/ratemylegislator/issues"
   },
-  "homepage": "https://github.com/yourusername/ratemylegislator#readme",
+  "homepage": "https://maxtkc.github.io/ratemylegislator",
   "keywords": [
     "gatsby",
     "react",

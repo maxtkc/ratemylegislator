@@ -5,10 +5,10 @@ const config: GatsbyConfig = {
     title: `Rate My Legislator`,
     description: `Track and rate Hawaii State Legislature performance with comprehensive data and insights.`,
     author: `@ratemylegislator`,
-    siteUrl: `https://your-username.github.io`, // Update this for GitHub Pages
+    siteUrl: `https://maxtkc.github.io/ratemylegislator`, // Update this for GitHub Pages
   },
   // Configure for GitHub Pages deployment (comment out for local development)
-  // pathPrefix: `/ratemylegislator`,
+  pathPrefix: `/ratemylegislator`,
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
