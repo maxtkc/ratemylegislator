@@ -60,8 +60,7 @@ build-static:
 
 # Deploy to GitHub Pages
 deploy:
-	docker-compose --profile build run --rm frontend-build
-	cd frontend && npm run deploy
+	docker-compose --profile deploy run --rm frontend-deploy
 
 # Run limited scrape
 scrape:
