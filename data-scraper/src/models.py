@@ -51,6 +51,19 @@ class MemberTerm(Base):
     current_experience = Column(Text)  # Current roles and positions
     previous_experience = Column(Text)  # Previous roles and experience
     
+    # Additional contact information
+    fax = Column(String(50))
+    
+    # Tab content from member page
+    about_content = Column(Text)
+    experience_content = Column(Text)
+    news_content = Column(Text)
+    links_content = Column(Text)  # JSON string of links
+    
+    # Reports and measures
+    allowance_report_url = Column(String(500))
+    measures_introduced = Column(Text)  # JSON string of measures
+    
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     

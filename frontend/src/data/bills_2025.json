@@ -4,21 +4,21 @@
     "bill_type": "HB",
     "bill_number": 1,
     "year": 2025,
-    "title": "Healthcare Access Bill",
-    "description": "A bill to improve healthcare access",
+    "title": null,
+    "description": null,
     "current_version": "HB1",
-    "introducer": "Rep. Example",
+    "introducer": null,
     "companion": null,
-    "current_referral": "HLT",
+    "current_referral": null,
     "act_number": null,
     "governor_message_number": null,
-    "current_bill_url": "https://example.com/hb1",
-    "current_pdf_url": null,
-    "status_count": 3,
+    "current_bill_url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1&year=2025",
+    "current_pdf_url": "https://www.capitol.hawaii.gov/sessions/session2025/bills/HB1_.pdf",
+    "status_count": 7,
     "latest_status": {
-      "date": "2025-07-24T04:09:23.330976",
-      "chamber": "House",
-      "action": "Committee passed"
+      "date": "2025-02-05T00:00:00",
+      "chamber": "H",
+      "action": "The committee(s) on HSG recommend(s) that the measure be deferred."
     }
   },
   {
@@ -26,43 +26,21 @@
     "bill_type": "SB",
     "bill_number": 1,
     "year": 2025,
-    "title": "Sample Education Funding Bill",
-    "description": "A bill to improve education funding in Hawaii",
+    "title": null,
+    "description": null,
     "current_version": "SB1",
-    "introducer": "Sen. Sample",
+    "introducer": null,
     "companion": null,
-    "current_referral": "EDU",
+    "current_referral": null,
     "act_number": null,
     "governor_message_number": null,
-    "current_bill_url": "https://example.com/sb1",
-    "current_pdf_url": null,
+    "current_bill_url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1&year=2025",
+    "current_pdf_url": "https://www.capitol.hawaii.gov/sessions/session2025/bills/SB1_.pdf",
     "status_count": 3,
     "latest_status": {
-      "date": "2025-07-24T04:09:23.329365",
-      "chamber": "Senate",
-      "action": "Committee passed"
-    }
-  },
-  {
-    "id": 3,
-    "bill_type": "SB",
-    "bill_number": 100,
-    "year": 2025,
-    "title": "Environmental Protection Act",
-    "description": "A bill to strengthen environmental protections",
-    "current_version": "SB100 SD1",
-    "introducer": "Sen. Green",
-    "companion": null,
-    "current_referral": "ENV",
-    "act_number": 25,
-    "governor_message_number": null,
-    "current_bill_url": "https://example.com/sb100",
-    "current_pdf_url": null,
-    "status_count": 4,
-    "latest_status": {
-      "date": "2025-08-02T04:09:23.331676",
-      "chamber": "Governor",
-      "action": "Signed into law as Act 25"
+      "date": "2025-01-16T00:00:00",
+      "chamber": "S",
+      "action": "Referred to AEN/TCA, JDC/WAM."
     }
   }
 ]

@@ -10,12 +10,12 @@ interface Bill {
   bill_type: string
   bill_number: number
   year: number
-  title: string
-  description: string
+  title: string | null
+  description: string | null
   current_version: string
-  introducer: string
+  introducer: string | null
   companion: string | null
-  current_referral: string
+  current_referral: string | null
   act_number: string | null
   governor_message_number: string | null
   current_bill_url: string
@@ -54,8 +54,8 @@ const BillsPage: React.FC<PageProps> = ({ location }) => {
 
   const filteredAndSortedBills = useMemo(() => {
     let filtered = bills.filter(bill => {
-      const matchesSearch = bill.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           bill.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      const matchesSearch = (bill.title?.toLowerCase().includes(searchTerm.toLowerCase()) || false) ||
+                           (bill.description?.toLowerCase().includes(searchTerm.toLowerCase()) || false) ||
                            bill.current_version.toLowerCase().includes(searchTerm.toLowerCase())
       
       const matchesType = filterType === "all" || bill.bill_type === filterType
@@ -64,7 +64,7 @@ const BillsPage: React.FC<PageProps> = ({ location }) => {
                            bill.latest_status.action.toLowerCase().includes(filterStatus.toLowerCase())
 
       const matchesMember = !memberFilter || 
-                           bill.introducer.toLowerCase().includes(memberFilter.toLowerCase())
+                           (bill.introducer?.toLowerCase().includes(memberFilter.toLowerCase()) || false)
 
       return matchesSearch && matchesType && matchesStatus && matchesMember
     })
@@ -280,7 +280,7 @@ const BillsPage: React.FC<PageProps> = ({ location }) => {
                   fontSize: "1.25rem",
                   lineHeight: "1.4"
                 }}>
-                  {bill.title}
+                  {bill.title || `${bill.bill_type}${bill.bill_number}`}
                 </h3>
                 
                 <p style={{ 
@@ -288,12 +288,12 @@ const BillsPage: React.FC<PageProps> = ({ location }) => {
                   color: "#64748b",
                   lineHeight: "1.5"
                 }}>
-                  {bill.description}
+                  {bill.description || "No description available"}
                 </p>
                 
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <div style={{ fontSize: "0.875rem", color: "#64748b" }}>
-                    Introduced by: <strong>{bill.introducer}</strong>
+                    Introduced by: <strong>{bill.introducer || "Unknown"}</strong>
                   </div>
                   
                   <div style={{

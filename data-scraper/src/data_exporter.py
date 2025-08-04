@@ -12,12 +12,15 @@ from models import Bill, Member, BillStatusUpdate, MemberTerm, MemberCommittee
 from sqlalchemy import func, desc
 
 class DataExporter:
-    def __init__(self, output_dir=None):
-        # Use environment variable for database URL
-        database_url = os.environ.get('DATABASE_URL', 'sqlite:///app/data/hawaii_legislature.db')
-        self.db_manager = DatabaseManager(database_url)
-        # Ensure tables exist
-        self.db_manager.create_tables()
+    def __init__(self, output_dir=None, db_manager=None):
+        if db_manager:
+            self.db_manager = db_manager
+        else:
+            # Use environment variable for database URL
+            database_url = os.environ.get('DATABASE_URL', 'sqlite:///app/data/hawaii_legislature.db')
+            self.db_manager = DatabaseManager(database_url)
+            # Ensure tables exist
+            self.db_manager.create_tables()
         
         # Use environment variable or default to the mounted volume
         if output_dir is None:
@@ -136,7 +139,7 @@ class DataExporter:
             
             for member in session.query(Member).order_by(Member.name).all():
                 # Get most recent term info
-                latest_term = session.query(MemberTerm).filter_by(member_id=member.id).order_by(desc(MemberTerm.year)).first()
+                latest_term = session.query(MemberTerm).filter_by(member_id=member.member_id).order_by(desc(MemberTerm.year)).first()
                 
                 # Get committee assignments
                 committees = []
@@ -144,12 +147,31 @@ class DataExporter:
                     committee_assignments = session.query(MemberCommittee).filter_by(member_term_id=latest_term.id).all()
                     committees = [{
                         "committee_name": assignment.committee_name,
-                        "position": assignment.position
+                        "position": assignment.position,
+                        "committee_type": assignment.committee_type
                     } for assignment in committee_assignments]
+                
+                # Parse JSON fields
+                measures_introduced = []
+                links = []
+                if latest_term:
+                    if latest_term.measures_introduced:
+                        try:
+                            measures_introduced = json.loads(latest_term.measures_introduced)
+                        except (json.JSONDecodeError, TypeError):
+                            measures_introduced = []
+                    
+                    if latest_term.links_content:
+                        try:
+                            links = json.loads(latest_term.links_content)
+                        except (json.JSONDecodeError, TypeError):
+                            links = []
                 
                 member_data = {
                     "id": member.id,
+                    "member_id": member.member_id,
                     "name": member.name,
+                    "bio": member.bio,
                     "latest_term": {
                         "year": latest_term.year if latest_term else None,
                         "title": latest_term.title if latest_term else None,
@@ -157,10 +179,22 @@ class DataExporter:
                         "district_type": latest_term.district_type if latest_term else None,
                         "district_number": latest_term.district_number if latest_term else None,
                         "district_description": latest_term.district_description if latest_term else None,
+                        "district_map_url": latest_term.district_map_url if latest_term else None,
                         "email": latest_term.email if latest_term else None,
-                        "phone": latest_term.phone if latest_term else None
+                        "phone": latest_term.phone if latest_term else None,
+                        "office": latest_term.office if latest_term else None,
+                        "fax": latest_term.fax if latest_term else None,
+                        "current_experience": latest_term.current_experience if latest_term else None,
+                        "previous_experience": latest_term.previous_experience if latest_term else None,
+                        "about_content": latest_term.about_content if latest_term else None,
+                        "experience_content": latest_term.experience_content if latest_term else None,
+                        "news_content": latest_term.news_content if latest_term else None,
+                        "allowance_report_url": latest_term.allowance_report_url if latest_term else None,
+                        "rss_feed_url": latest_term.rss_feed_url if latest_term else None
                     } if latest_term else None,
                     "committees": committees,
+                    "measures_introduced": measures_introduced,
+                    "links": links,
                     "photo_url": latest_term.photo_url if latest_term else None
                 }
                 members_data.append(member_data)

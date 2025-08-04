@@ -1,0 +1,5 @@
+- [ ] Test with scraping more pages
+- [ ] Investigate how the scraping works
+- [ ] Add year dropdown for members
+- [ ] Commit
+- [ ] Deploy to GitHub pages

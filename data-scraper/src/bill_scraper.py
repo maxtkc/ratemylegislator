@@ -17,8 +17,8 @@ import time
 import logging
 
 class BillScraper:
-    def __init__(self, log_file="bill_scraper.log"):
-        self.db_manager = DatabaseManager()
+    def __init__(self, log_file="bill_scraper.log", db_manager=None):
+        self.db_manager = db_manager if db_manager else DatabaseManager()
         self.session = cloudscraper.create_scraper(
             browser={
                 'browser': 'firefox',

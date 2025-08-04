@@ -6,6 +6,7 @@ import membersData from "../data/members.json"
 
 interface Member {
   id: number
+  member_id: number
   name: string
   latest_term: {
     year: number
@@ -16,9 +17,9 @@ interface Member {
     district_description: string
     email: string
     phone: string
-  }
+  } | null
   committees: any[]
-  photo_url: string
+  photo_url: string | null
 }
 
 const MembersPage: React.FC<PageProps> = () => {
@@ -30,19 +31,24 @@ const MembersPage: React.FC<PageProps> = () => {
 
   const filteredMembers = useMemo(() => {
     return members.filter(member => {
+      // Search matching - include name search and district search if term data exists
       const matchesSearch = member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           member.latest_term.district_description.toLowerCase().includes(searchTerm.toLowerCase())
+                           (member.latest_term?.district_description?.toLowerCase().includes(searchTerm.toLowerCase()) || false)
       
-      const matchesParty = filterParty === "all" || member.latest_term.party === filterParty
+      // Party filtering - only apply if member has term data and filter is not "all"
+      const matchesParty = filterParty === "all" || 
+                          (member.latest_term?.party === filterParty || false)
       
-      const matchesChamber = filterChamber === "all" || member.latest_term.district_type === filterChamber
+      // Chamber filtering - only apply if member has term data and filter is not "all"
+      const matchesChamber = filterChamber === "all" || 
+                            (member.latest_term?.district_type === filterChamber || false)
 
       return matchesSearch && matchesParty && matchesChamber
     })
   }, [searchTerm, filterParty, filterChamber, members])
 
-  const parties = [...new Set(members.map(member => member.latest_term.party))].sort()
-  const chambers = [...new Set(members.map(member => member.latest_term.district_type))].sort()
+  const parties = [...new Set(members.filter(member => member.latest_term).map(member => member.latest_term!.party))].sort()
+  const chambers = [...new Set(members.filter(member => member.latest_term).map(member => member.latest_term!.district_type))].sort()
 
   return (
     <Layout>
@@ -191,35 +197,72 @@ const MembersPage: React.FC<PageProps> = () => {
                       marginBottom: "0.5rem",
                       flexWrap: "wrap"
                     }}>
-                      <span style={{
-                        backgroundColor: member.latest_term.party === "Democratic" ? "#dbeafe" : "#fef3c7",
-                        color: member.latest_term.party === "Democratic" ? "#1e40af" : "#92400e",
-                        padding: "0.25rem 0.5rem",
-                        borderRadius: "4px",
-                        fontSize: "0.875rem",
-                        fontWeight: "500"
-                      }}>
-                        {member.latest_term.party}
-                      </span>
+                      {member.latest_term?.party && (
+                        <span style={{
+                          backgroundColor: member.latest_term.party === "Democratic" ? "#dbeafe" : "#fef3c7",
+                          color: member.latest_term.party === "Democratic" ? "#1e40af" : "#92400e",
+                          padding: "0.25rem 0.5rem",
+                          borderRadius: "4px",
+                          fontSize: "0.875rem",
+                          fontWeight: "500"
+                        }}>
+                          {member.latest_term.party}
+                        </span>
+                      )}
                       
-                      <span style={{
-                        backgroundColor: "#f1f5f9",
-                        color: "#475569",
-                        padding: "0.25rem 0.5rem",
-                        borderRadius: "4px",
-                        fontSize: "0.875rem"
-                      }}>
-                        {member.latest_term.district_type}
-                      </span>
+                      {member.latest_term?.district_type && (
+                        <span style={{
+                          backgroundColor: "#f1f5f9",
+                          color: "#475569",
+                          padding: "0.25rem 0.5rem",
+                          borderRadius: "4px",
+                          fontSize: "0.875rem"
+                        }}>
+                          {member.latest_term.district_type}
+                        </span>
+                      )}
+                      
+                      {!member.latest_term && (
+                        <span style={{
+                          backgroundColor: "#f3f4f6",
+                          color: "#6b7280",
+                          padding: "0.25rem 0.5rem",
+                          borderRadius: "4px",
+                          fontSize: "0.875rem"
+                        }}>
+                          No current term data
+                        </span>
+                      )}
                     </div>
                     
                     <p style={{ 
-                      margin: 0, 
+                      margin: "0 0 0.75rem 0", 
                       color: "#64748b",
                       fontSize: "0.875rem"
                     }}>
-                      {member.latest_term.district_description}
+                      {member.latest_term?.district_description || "District information not available"}
                     </p>
+                    
+                    {member.member_id && member.latest_term && (
+                      <a
+                        href={`https://www.capitol.hawaii.gov/legislature/memberpage.aspx?member=${member.member_id}&year=${member.latest_term.year}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        style={{
+                          color: "#1e40af",
+                          fontSize: "0.75rem",
+                          textDecoration: "none",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "0.25rem"
+                        }}
+                        onMouseOver={(e) => e.currentTarget.style.textDecoration = "underline"}
+                        onMouseOut={(e) => e.currentTarget.style.textDecoration = "none"}
+                      >
+                        View legislature page ↗
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

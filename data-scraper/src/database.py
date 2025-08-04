@@ -5,15 +5,45 @@ from models import (Base, Bill, BillStatusUpdate, BillVersion, BillCommitteeRepo
 import os
 
 class DatabaseManager:
-    def __init__(self, database_url="sqlite:///hawaii_legislature.db"):
+    def __init__(self, database_url=None):
+        if database_url is None:
+            database_url = os.getenv('DATABASE_URL', 'sqlite:///hawaii_legislature.db')
         self.database_url = database_url
         self.engine = create_engine(database_url, echo=False)
         self.SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
         
     def create_tables(self):
         """Create all tables in the database"""
+        import os
+        if self.database_url.startswith('sqlite:///'):
+            db_path = self.database_url[10:]  # Remove 'sqlite:///'
+            if not db_path.startswith('/'):
+                db_path = '/' + db_path  # Ensure absolute path
+        else:
+            db_path = self.database_url
+        
+        print(f"Creating tables with database URL: {self.database_url}")  
+        print(f"Database path: {db_path}")
+        print(f"Database file exists: {os.path.exists(db_path)}")
+        if os.path.exists(db_path):
+            print(f"Database file size: {os.path.getsize(db_path)} bytes")
+        
+        # Ensure parent directory exists
+        parent_dir = os.path.dirname(db_path)
+        if parent_dir:
+            os.makedirs(parent_dir, exist_ok=True)
+        
         Base.metadata.create_all(bind=self.engine)
         print("Database tables created successfully.")
+        
+        # Verify tables were created
+        with self.get_session() as session:
+            try:
+                bill_count = session.query(Bill).count()
+                member_count = session.query(Member).count()
+                print(f"Current data: {bill_count} bills, {member_count} members")
+            except Exception as e:
+                print(f"Error checking data: {e}")
         
     def get_session(self):
         """Get a new database session"""
