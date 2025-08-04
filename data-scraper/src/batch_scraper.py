@@ -11,11 +11,41 @@ from member_scraper import MemberScraper
 from scraper_utils import ScrapingStats, setup_logging, validate_year
 from database import DatabaseManager
 
+def parse_range(range_str):
+    """Parse range strings like '1-250', '1,5,10-20', or single numbers"""
+    if not range_str:
+        return []
+    
+    numbers = []
+    parts = range_str.split(',')
+    
+    for part in parts:
+        part = part.strip()
+        if '-' in part:
+            start, end = map(int, part.split('-', 1))
+            numbers.extend(range(start, end + 1))
+        else:
+            numbers.append(int(part))
+    
+    return sorted(set(numbers))
+
+def parse_year_range(year_str):
+    """Parse year range strings like '2024-2025' or '2025'"""
+    if not year_str:
+        return []
+    
+    if '-' in year_str:
+        start, end = map(int, year_str.split('-', 1))
+        return list(range(start, end + 1))
+    else:
+        return [int(year_str)]
+
 class BatchScraper:
     def __init__(self, delay=0.5):
-        self.bill_scraper = BillScraper()
-        self.member_scraper = MemberScraper()
         self.db_manager = DatabaseManager()
+        self.db_manager.create_tables()  # Ensure tables exist
+        self.bill_scraper = BillScraper(db_manager=self.db_manager)
+        self.member_scraper = MemberScraper(db_manager=self.db_manager)
         self.delay = delay
         self.logger = setup_logging()
         self.stats = ScrapingStats()
@@ -162,6 +192,78 @@ class BatchScraper:
         
         self.stats.print_summary()
     
+    def scrape_members_by_range(self, member_ids, years, batch_size=50):
+        """Scrape members using lists of member IDs and years"""
+        self.logger.info(f"Starting range-based member scraping: {len(member_ids)} IDs x {len(years)} years")
+        self.stats.reset()
+        
+        total_combinations = len(member_ids) * len(years)
+        processed = 0
+        
+        for year in years:
+            for member_id in member_ids:
+                self.stats.record_attempt()
+                processed += 1
+                
+                try:
+                    success = self.member_scraper.scrape_member(member_id, year)
+                    
+                    if success:
+                        self.stats.record_success()
+                    else:
+                        self.stats.record_failure()
+                
+                except Exception as e:
+                    self.logger.error(f"Error scraping member {member_id}-{year}: {e}")
+                    self.stats.record_failure()
+                
+                time.sleep(self.delay)
+                
+                # Progress reporting
+                if processed % batch_size == 0:
+                    self.logger.info(f"Progress: {processed}/{total_combinations} ({self.stats.total_successful} successful)")
+        
+        self.stats.print_summary()
+        self.logger.info(f"Completed range-based member scraping")
+    
+    def scrape_bills_by_range(self, bill_numbers, bill_types, years):
+        """Scrape bills using lists of bill numbers, types, and years"""
+        if not bill_types:
+            bill_types = self.bill_types
+        
+        self.logger.info(f"Starting range-based bill scraping: {len(bill_numbers)} numbers x {len(bill_types)} types x {len(years)} years")
+        self.stats.reset()
+        
+        total_combinations = len(bill_numbers) * len(bill_types) * len(years)
+        processed = 0
+        
+        for year in years:
+            for bill_type in bill_types:
+                for bill_number in bill_numbers:
+                    self.stats.record_attempt()
+                    processed += 1
+                    
+                    try:
+                        success = self.bill_scraper.scrape_bill(bill_type, bill_number, year)
+                        
+                        if success:
+                            self.stats.record_success()
+                        else:
+                            self.stats.record_failure()
+                    
+                    except Exception as e:
+                        self.logger.error(f"Error scraping {bill_type}{bill_number}-{year}: {e}")
+                        self.stats.record_failure()
+                    
+                    time.sleep(self.delay)
+                    
+                    # Progress reporting
+                    if processed % 100 == 0:
+                        self.logger.info(f"Progress: {processed}/{total_combinations} ({self.stats.total_successful} successful)")
+        
+        self.stats.print_summary()
+        self.logger.info(f"Completed range-based bill scraping")
+    
     def full_historical_scrape(self, start_year=2008, end_year=None):
         """Perform a complete historical scrape of all data"""
         if end_year is None:
@@ -218,7 +320,7 @@ class BatchScraper:
 
 def main():
     parser = argparse.ArgumentParser(description='Hawaii Legislature Batch Scraper')
-    parser.add_argument('--mode', choices=['bills', 'members', 'both', 'test', 'full', 'update'], 
+    parser.add_argument('--mode', choices=['bills', 'members', 'both', 'test', 'full', 'update', 'range-members', 'range-bills'], 
                         default='test', help='Scraping mode')
     parser.add_argument('--year', type=int, help='Specific year to scrape')
     parser.add_argument('--start-year', type=int, default=2008, help='Start year for historical scrape')
@@ -229,6 +331,11 @@ def main():
     parser.add_argument('--start-id', type=int, default=1, help='Start member ID')
     parser.add_argument('--end-id', type=int, default=1500, help='End member ID')
     parser.add_argument('--max-bills', type=int, default=10000, help='Maximum bill number to try')
+    
+    # New range-based arguments
+    parser.add_argument('--member-ids', type=str, help='Member ID ranges (e.g., "1-250", "1,5,10-20")')
+    parser.add_argument('--years', type=str, help='Year ranges (e.g., "2025", "2024-2025")')
+    parser.add_argument('--bill-numbers', type=str, help='Bill number ranges (e.g., "1-100", "1,5,10-20")')
     
     args = parser.parse_args()
     
@@ -260,6 +367,30 @@ def main():
         for year in years:
             scraper.scrape_bills_for_year(year, args.bill_types, max_number=args.max_bills)
             scraper.scrape_members_for_year(year, args.start_id, args.end_id)
+    
+    elif args.mode == 'range-members':
+        # Parse member IDs and years from range strings
+        if not args.member_ids:
+            parser.error("--member-ids is required for range-members mode")
+        if not args.years:
+            parser.error("--years is required for range-members mode")
+        
+        member_ids = parse_range(args.member_ids)
+        target_years = parse_year_range(args.years)
+        
+        scraper.scrape_members_by_range(member_ids, target_years)
+    
+    elif args.mode == 'range-bills':
+        # Parse bill numbers, types, and years from range strings
+        if not args.bill_numbers:
+            parser.error("--bill-numbers is required for range-bills mode")
+        if not args.years:
+            parser.error("--years is required for range-bills mode")
+        
+        bill_numbers = parse_range(args.bill_numbers)
+        target_years = parse_year_range(args.years)
+        
+        scraper.scrape_bills_by_range(bill_numbers, args.bill_types, target_years)
     
     elif args.mode == 'full':
         scraper.full_historical_scrape(args.start_year, args.end_year)
