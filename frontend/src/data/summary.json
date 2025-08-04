@@ -1,12 +1,7 @@
 {
-  "last_updated": "2025-08-04T04:24:02.897895",
-  "total_bills": 400,
-  "total_members": 0,
-  "years_available": [
-    2025
-  ],
-  "bill_types": [
-    "HB",
-    "SB"
-  ]
+  "last_updated": "2025-08-04T04:52:32.569087",
+  "total_bills": 0,
+  "total_members": 77,
+  "years_available": [],
+  "bill_types": []
 }
