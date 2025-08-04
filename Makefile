@@ -14,9 +14,11 @@ help:
 	@echo "  scraper        - Start data-scraper service"
 	@echo "  frontend       - Start frontend development server"
 	@echo "  build-static   - Build static site for GitHub Pages"
-	@echo "  deploy         - Deploy to GitHub Pages"
-	@echo "  scrape         - Run a limited scrape"
-	@echo "  scrape-full    - Run full data scraping"
+	@echo "  deploy         - Build and deploy to GitHub Pages"
+	@echo "  scrape         - Run limited scrape with data export"
+	@echo "  scrape-full    - Run full data scraping with export"
+	@echo "  scrape-members - Range scrape members: IDS='1-250' YEAR='2025' make scrape-members"
+	@echo "  scrape-bills   - Range scrape bills: NUMBERS='1-100' TYPES='SB HB' YEAR='2025' make scrape-bills"
 	@echo "  export-data    - Export scraped data to JSON for frontend"
 
 # Build all images
@@ -56,26 +58,34 @@ frontend:
 build-static:
 	docker-compose --profile build run --rm frontend-build
 
-# Deploy to GitHub Pages (run locally)
+# Deploy to GitHub Pages
 deploy:
+	docker-compose --profile build run --rm frontend-build
 	cd frontend && npm run deploy
 
 # Run limited scrape
 scrape:
-	docker-compose run --rm data-scraper python src/limited_scrape_2025.py
+	docker-compose run --rm --user root data-scraper bash -c "DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/limited_scrape_2025.py && DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/data_exporter.py"
 
 # Run full scrape
 scrape-full:
-	docker-compose run --rm data-scraper python src/batch_scraper.py --mode both --year 2025
+	docker-compose run --rm --user root data-scraper bash -c "DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/batch_scraper.py --mode both --year 2025 && DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/data_exporter.py"
+
+# Run range-based member scraping
+scrape-members:
+	docker-compose run --rm --user root data-scraper bash -c "DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/batch_scraper.py --mode range-members --member-ids '$(IDS)' --years '$(YEAR)' --delay 0.8 && DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/data_exporter.py"
+
+# Run range-based bill scraping  
+scrape-bills:
+	docker-compose run --rm --user root data-scraper bash -c "DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/batch_scraper.py --mode range-bills --bill-numbers '$(NUMBERS)' --bill-types $(TYPES) --years '$(YEAR)' --delay 0.8 && DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/data_exporter.py"
 
 # Export data to frontend
 export-data:
-	docker-compose run --rm data-scraper python src/data_exporter.py
+	docker-compose run --rm --user root data-scraper bash -c "DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/data_exporter.py"
 
 # Combined workflow: scrape and export
 scrape-and-export:
-	make scrape
-	make export-data
+	docker-compose run --rm --user root data-scraper bash -c "DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/limited_scrape_2025.py && DATABASE_URL='sqlite:////tmp/hawaii_legislature.db' python src/data_exporter.py"
 
 # Install frontend dependencies
 frontend-install:

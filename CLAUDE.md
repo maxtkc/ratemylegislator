@@ -22,16 +22,14 @@ make build
 # Start frontend development server (http://localhost:3000)
 make up
 
-# Run data scraping
-make scrape                # Limited test scrape
-make scrape-full          # Full year scraping
-make export-data          # Export database to JSON files for frontend
-make scrape-and-export    # Combined workflow
+# Run data scraping (automatically exports to frontend)
+make scrape                                    # Limited test scrape
+make scrape-full                              # Full year scraping  
+IDS='1-250' YEAR='2025' make scrape-members   # Range scrape members
+NUMBERS='1-100' TYPES='SB HB' YEAR='2025' make scrape-bills  # Range scrape bills
+make export-data                              # Export database to JSON files for frontend
 
-# Build static site for GitHub Pages
-make build-static
-
-# Deploy to GitHub Pages
+# Build and deploy to GitHub Pages
 make deploy
 
 # Access container shells for debugging
@@ -135,3 +133,9 @@ Always run `make test` and frontend linting commands before committing changes.
 ## Deployment
 
 GitHub Pages deployment requires updating `frontend/gatsby-config.ts` with correct repository information. The static site is built with `--prefix-paths` for proper GitHub Pages routing.
+
+Remember: Don't run sudo commands directly, as me to run them for you because you won't be able to run them directly.
+
+If you think of tooling you think I should use to improve my process, please suggest it to me.
+
+For git commits, don't include anything about claude
