@@ -36,192 +36,6 @@ type AVIFOptions = {
   readonly speed: InputMaybe<Scalars['Int']>;
 };
 
-type Bills2025Json = Node & {
-  readonly bill_number: Maybe<Scalars['Int']>;
-  readonly bill_type: Maybe<Scalars['String']>;
-  readonly children: ReadonlyArray<Node>;
-  readonly current_bill_url: Maybe<Scalars['String']>;
-  readonly current_pdf_url: Maybe<Scalars['String']>;
-  readonly current_version: Maybe<Scalars['String']>;
-  readonly id: Scalars['ID'];
-  readonly internal: Internal;
-  readonly jsonId: Maybe<Scalars['Int']>;
-  readonly latest_status: Maybe<Bills2025JsonLatest_status>;
-  readonly parent: Maybe<Node>;
-  readonly status_count: Maybe<Scalars['Int']>;
-  readonly year: Maybe<Scalars['Int']>;
-};
-
-type Bills2025JsonConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<Bills2025JsonEdge>;
-  readonly group: ReadonlyArray<Bills2025JsonGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<Bills2025Json>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type Bills2025JsonConnection_distinctArgs = {
-  field: Bills2025JsonFieldSelector;
-};
-
-
-type Bills2025JsonConnection_groupArgs = {
-  field: Bills2025JsonFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type Bills2025JsonConnection_maxArgs = {
-  field: Bills2025JsonFieldSelector;
-};
-
-
-type Bills2025JsonConnection_minArgs = {
-  field: Bills2025JsonFieldSelector;
-};
-
-
-type Bills2025JsonConnection_sumArgs = {
-  field: Bills2025JsonFieldSelector;
-};
-
-type Bills2025JsonEdge = {
-  readonly next: Maybe<Bills2025Json>;
-  readonly node: Bills2025Json;
-  readonly previous: Maybe<Bills2025Json>;
-};
-
-type Bills2025JsonFieldSelector = {
-  readonly bill_number: InputMaybe<FieldSelectorEnum>;
-  readonly bill_type: InputMaybe<FieldSelectorEnum>;
-  readonly children: InputMaybe<NodeFieldSelector>;
-  readonly current_bill_url: InputMaybe<FieldSelectorEnum>;
-  readonly current_pdf_url: InputMaybe<FieldSelectorEnum>;
-  readonly current_version: InputMaybe<FieldSelectorEnum>;
-  readonly id: InputMaybe<FieldSelectorEnum>;
-  readonly internal: InputMaybe<InternalFieldSelector>;
-  readonly jsonId: InputMaybe<FieldSelectorEnum>;
-  readonly latest_status: InputMaybe<Bills2025JsonLatest_statusFieldSelector>;
-  readonly parent: InputMaybe<NodeFieldSelector>;
-  readonly status_count: InputMaybe<FieldSelectorEnum>;
-  readonly year: InputMaybe<FieldSelectorEnum>;
-};
-
-type Bills2025JsonFilterInput = {
-  readonly bill_number: InputMaybe<IntQueryOperatorInput>;
-  readonly bill_type: InputMaybe<StringQueryOperatorInput>;
-  readonly children: InputMaybe<NodeFilterListInput>;
-  readonly current_bill_url: InputMaybe<StringQueryOperatorInput>;
-  readonly current_pdf_url: InputMaybe<StringQueryOperatorInput>;
-  readonly current_version: InputMaybe<StringQueryOperatorInput>;
-  readonly id: InputMaybe<StringQueryOperatorInput>;
-  readonly internal: InputMaybe<InternalFilterInput>;
-  readonly jsonId: InputMaybe<IntQueryOperatorInput>;
-  readonly latest_status: InputMaybe<Bills2025JsonLatest_statusFilterInput>;
-  readonly parent: InputMaybe<NodeFilterInput>;
-  readonly status_count: InputMaybe<IntQueryOperatorInput>;
-  readonly year: InputMaybe<IntQueryOperatorInput>;
-};
-
-type Bills2025JsonFilterListInput = {
-  readonly elemMatch: InputMaybe<Bills2025JsonFilterInput>;
-};
-
-type Bills2025JsonGroupConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<Bills2025JsonEdge>;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<Bills2025JsonGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<Bills2025Json>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type Bills2025JsonGroupConnection_distinctArgs = {
-  field: Bills2025JsonFieldSelector;
-};
-
-
-type Bills2025JsonGroupConnection_groupArgs = {
-  field: Bills2025JsonFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type Bills2025JsonGroupConnection_maxArgs = {
-  field: Bills2025JsonFieldSelector;
-};
-
-
-type Bills2025JsonGroupConnection_minArgs = {
-  field: Bills2025JsonFieldSelector;
-};
-
-
-type Bills2025JsonGroupConnection_sumArgs = {
-  field: Bills2025JsonFieldSelector;
-};
-
-type Bills2025JsonLatest_status = {
-  readonly action: Maybe<Scalars['String']>;
-  readonly chamber: Maybe<Scalars['String']>;
-  readonly date: Maybe<Scalars['Date']>;
-};
-
-
-type Bills2025JsonLatest_status_dateArgs = {
-  difference: InputMaybe<Scalars['String']>;
-  formatString: InputMaybe<Scalars['String']>;
-  fromNow: InputMaybe<Scalars['Boolean']>;
-  locale: InputMaybe<Scalars['String']>;
-};
-
-type Bills2025JsonLatest_statusFieldSelector = {
-  readonly action: InputMaybe<FieldSelectorEnum>;
-  readonly chamber: InputMaybe<FieldSelectorEnum>;
-  readonly date: InputMaybe<FieldSelectorEnum>;
-};
-
-type Bills2025JsonLatest_statusFilterInput = {
-  readonly action: InputMaybe<StringQueryOperatorInput>;
-  readonly chamber: InputMaybe<StringQueryOperatorInput>;
-  readonly date: InputMaybe<DateQueryOperatorInput>;
-};
-
-type Bills2025JsonLatest_statusSortInput = {
-  readonly action: InputMaybe<SortOrderEnum>;
-  readonly chamber: InputMaybe<SortOrderEnum>;
-  readonly date: InputMaybe<SortOrderEnum>;
-};
-
-type Bills2025JsonSortInput = {
-  readonly bill_number: InputMaybe<SortOrderEnum>;
-  readonly bill_type: InputMaybe<SortOrderEnum>;
-  readonly children: InputMaybe<NodeSortInput>;
-  readonly current_bill_url: InputMaybe<SortOrderEnum>;
-  readonly current_pdf_url: InputMaybe<SortOrderEnum>;
-  readonly current_version: InputMaybe<SortOrderEnum>;
-  readonly id: InputMaybe<SortOrderEnum>;
-  readonly internal: InputMaybe<InternalSortInput>;
-  readonly jsonId: InputMaybe<SortOrderEnum>;
-  readonly latest_status: InputMaybe<Bills2025JsonLatest_statusSortInput>;
-  readonly parent: InputMaybe<NodeSortInput>;
-  readonly status_count: InputMaybe<SortOrderEnum>;
-  readonly year: InputMaybe<SortOrderEnum>;
-};
-
 type BlurredOptions = {
   /** Force the output format for the low-res preview. Default is to use the same format as the input. You should rarely need to change this */
   readonly toFormat: InputMaybe<ImageFormat>;
@@ -234,180 +48,6 @@ type BooleanQueryOperatorInput = {
   readonly in: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Boolean']>>>;
   readonly ne: InputMaybe<Scalars['Boolean']>;
   readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Boolean']>>>;
-};
-
-type DataJson = Node & {
-  readonly bill_types: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly children: ReadonlyArray<Node>;
-  readonly id: Scalars['ID'];
-  readonly internal: Internal;
-  readonly last_updated: Maybe<Scalars['Date']>;
-  readonly parent: Maybe<Node>;
-  readonly passage_rate: Maybe<DataJsonPassage_rate>;
-  readonly total_bills: Maybe<Scalars['Int']>;
-  readonly total_members: Maybe<Scalars['Int']>;
-  readonly years_available: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>;
-};
-
-
-type DataJson_last_updatedArgs = {
-  difference: InputMaybe<Scalars['String']>;
-  formatString: InputMaybe<Scalars['String']>;
-  fromNow: InputMaybe<Scalars['Boolean']>;
-  locale: InputMaybe<Scalars['String']>;
-};
-
-type DataJsonConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<DataJsonEdge>;
-  readonly group: ReadonlyArray<DataJsonGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<DataJson>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type DataJsonConnection_distinctArgs = {
-  field: DataJsonFieldSelector;
-};
-
-
-type DataJsonConnection_groupArgs = {
-  field: DataJsonFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type DataJsonConnection_maxArgs = {
-  field: DataJsonFieldSelector;
-};
-
-
-type DataJsonConnection_minArgs = {
-  field: DataJsonFieldSelector;
-};
-
-
-type DataJsonConnection_sumArgs = {
-  field: DataJsonFieldSelector;
-};
-
-type DataJsonEdge = {
-  readonly next: Maybe<DataJson>;
-  readonly node: DataJson;
-  readonly previous: Maybe<DataJson>;
-};
-
-type DataJsonFieldSelector = {
-  readonly bill_types: InputMaybe<FieldSelectorEnum>;
-  readonly children: InputMaybe<NodeFieldSelector>;
-  readonly id: InputMaybe<FieldSelectorEnum>;
-  readonly internal: InputMaybe<InternalFieldSelector>;
-  readonly last_updated: InputMaybe<FieldSelectorEnum>;
-  readonly parent: InputMaybe<NodeFieldSelector>;
-  readonly passage_rate: InputMaybe<DataJsonPassage_rateFieldSelector>;
-  readonly total_bills: InputMaybe<FieldSelectorEnum>;
-  readonly total_members: InputMaybe<FieldSelectorEnum>;
-  readonly years_available: InputMaybe<FieldSelectorEnum>;
-};
-
-type DataJsonFilterInput = {
-  readonly bill_types: InputMaybe<StringQueryOperatorInput>;
-  readonly children: InputMaybe<NodeFilterListInput>;
-  readonly id: InputMaybe<StringQueryOperatorInput>;
-  readonly internal: InputMaybe<InternalFilterInput>;
-  readonly last_updated: InputMaybe<DateQueryOperatorInput>;
-  readonly parent: InputMaybe<NodeFilterInput>;
-  readonly passage_rate: InputMaybe<DataJsonPassage_rateFilterInput>;
-  readonly total_bills: InputMaybe<IntQueryOperatorInput>;
-  readonly total_members: InputMaybe<IntQueryOperatorInput>;
-  readonly years_available: InputMaybe<IntQueryOperatorInput>;
-};
-
-type DataJsonFilterListInput = {
-  readonly elemMatch: InputMaybe<DataJsonFilterInput>;
-};
-
-type DataJsonGroupConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<DataJsonEdge>;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<DataJsonGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<DataJson>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type DataJsonGroupConnection_distinctArgs = {
-  field: DataJsonFieldSelector;
-};
-
-
-type DataJsonGroupConnection_groupArgs = {
-  field: DataJsonFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type DataJsonGroupConnection_maxArgs = {
-  field: DataJsonFieldSelector;
-};
-
-
-type DataJsonGroupConnection_minArgs = {
-  field: DataJsonFieldSelector;
-};
-
-
-type DataJsonGroupConnection_sumArgs = {
-  field: DataJsonFieldSelector;
-};
-
-type DataJsonPassage_rate = {
-  readonly passed: Maybe<Scalars['Int']>;
-  readonly percentage: Maybe<Scalars['Int']>;
-  readonly total: Maybe<Scalars['Int']>;
-};
-
-type DataJsonPassage_rateFieldSelector = {
-  readonly passed: InputMaybe<FieldSelectorEnum>;
-  readonly percentage: InputMaybe<FieldSelectorEnum>;
-  readonly total: InputMaybe<FieldSelectorEnum>;
-};
-
-type DataJsonPassage_rateFilterInput = {
-  readonly passed: InputMaybe<IntQueryOperatorInput>;
-  readonly percentage: InputMaybe<IntQueryOperatorInput>;
-  readonly total: InputMaybe<IntQueryOperatorInput>;
-};
-
-type DataJsonPassage_rateSortInput = {
-  readonly passed: InputMaybe<SortOrderEnum>;
-  readonly percentage: InputMaybe<SortOrderEnum>;
-  readonly total: InputMaybe<SortOrderEnum>;
-};
-
-type DataJsonSortInput = {
-  readonly bill_types: InputMaybe<SortOrderEnum>;
-  readonly children: InputMaybe<NodeSortInput>;
-  readonly id: InputMaybe<SortOrderEnum>;
-  readonly internal: InputMaybe<InternalSortInput>;
-  readonly last_updated: InputMaybe<SortOrderEnum>;
-  readonly parent: InputMaybe<NodeSortInput>;
-  readonly passage_rate: InputMaybe<DataJsonPassage_rateSortInput>;
-  readonly total_bills: InputMaybe<SortOrderEnum>;
-  readonly total_members: InputMaybe<SortOrderEnum>;
-  readonly years_available: InputMaybe<SortOrderEnum>;
 };
 
 type DateQueryOperatorInput = {
@@ -737,26 +377,12 @@ type File = Node & {
   readonly birthtime: Maybe<Scalars['Date']>;
   /** @deprecated Use `birthTime` instead */
   readonly birthtimeMs: Maybe<Scalars['Float']>;
-  readonly blksize: Maybe<Scalars['Int']>;
-  readonly blocks: Maybe<Scalars['Int']>;
   readonly changeTime: Scalars['Date'];
-  /** Returns the first child node of type Bills2025Json or null if there are no children of given type on this node */
-  readonly childBills2025Json: Maybe<Bills2025Json>;
-  /** Returns the first child node of type DataJson or null if there are no children of given type on this node */
-  readonly childDataJson: Maybe<DataJson>;
   /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   readonly childImageSharp: Maybe<ImageSharp>;
-  /** Returns the first child node of type MembersJson or null if there are no children of given type on this node */
-  readonly childMembersJson: Maybe<MembersJson>;
   readonly children: ReadonlyArray<Node>;
-  /** Returns all children nodes filtered by type Bills2025Json */
-  readonly childrenBills2025Json: Maybe<ReadonlyArray<Maybe<Bills2025Json>>>;
-  /** Returns all children nodes filtered by type DataJson */
-  readonly childrenDataJson: Maybe<ReadonlyArray<Maybe<DataJson>>>;
   /** Returns all children nodes filtered by type ImageSharp */
   readonly childrenImageSharp: Maybe<ReadonlyArray<Maybe<ImageSharp>>>;
-  /** Returns all children nodes filtered by type MembersJson */
-  readonly childrenMembersJson: Maybe<ReadonlyArray<Maybe<MembersJson>>>;
   readonly ctime: Scalars['Date'];
   readonly ctimeMs: Scalars['Float'];
   readonly dev: Scalars['Int'];
@@ -896,18 +522,10 @@ type FileFieldSelector = {
   readonly birthTime: InputMaybe<FieldSelectorEnum>;
   readonly birthtime: InputMaybe<FieldSelectorEnum>;
   readonly birthtimeMs: InputMaybe<FieldSelectorEnum>;
-  readonly blksize: InputMaybe<FieldSelectorEnum>;
-  readonly blocks: InputMaybe<FieldSelectorEnum>;
   readonly changeTime: InputMaybe<FieldSelectorEnum>;
-  readonly childBills2025Json: InputMaybe<Bills2025JsonFieldSelector>;
-  readonly childDataJson: InputMaybe<DataJsonFieldSelector>;
   readonly childImageSharp: InputMaybe<ImageSharpFieldSelector>;
-  readonly childMembersJson: InputMaybe<MembersJsonFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
-  readonly childrenBills2025Json: InputMaybe<Bills2025JsonFieldSelector>;
-  readonly childrenDataJson: InputMaybe<DataJsonFieldSelector>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFieldSelector>;
-  readonly childrenMembersJson: InputMaybe<MembersJsonFieldSelector>;
   readonly ctime: InputMaybe<FieldSelectorEnum>;
   readonly ctimeMs: InputMaybe<FieldSelectorEnum>;
   readonly dev: InputMaybe<FieldSelectorEnum>;
@@ -945,18 +563,10 @@ type FileFilterInput = {
   readonly birthTime: InputMaybe<DateQueryOperatorInput>;
   readonly birthtime: InputMaybe<DateQueryOperatorInput>;
   readonly birthtimeMs: InputMaybe<FloatQueryOperatorInput>;
-  readonly blksize: InputMaybe<IntQueryOperatorInput>;
-  readonly blocks: InputMaybe<IntQueryOperatorInput>;
   readonly changeTime: InputMaybe<DateQueryOperatorInput>;
-  readonly childBills2025Json: InputMaybe<Bills2025JsonFilterInput>;
-  readonly childDataJson: InputMaybe<DataJsonFilterInput>;
   readonly childImageSharp: InputMaybe<ImageSharpFilterInput>;
-  readonly childMembersJson: InputMaybe<MembersJsonFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
-  readonly childrenBills2025Json: InputMaybe<Bills2025JsonFilterListInput>;
-  readonly childrenDataJson: InputMaybe<DataJsonFilterListInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
-  readonly childrenMembersJson: InputMaybe<MembersJsonFilterListInput>;
   readonly ctime: InputMaybe<DateQueryOperatorInput>;
   readonly ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   readonly dev: InputMaybe<IntQueryOperatorInput>;
@@ -1035,18 +645,10 @@ type FileSortInput = {
   readonly birthTime: InputMaybe<SortOrderEnum>;
   readonly birthtime: InputMaybe<SortOrderEnum>;
   readonly birthtimeMs: InputMaybe<SortOrderEnum>;
-  readonly blksize: InputMaybe<SortOrderEnum>;
-  readonly blocks: InputMaybe<SortOrderEnum>;
   readonly changeTime: InputMaybe<SortOrderEnum>;
-  readonly childBills2025Json: InputMaybe<Bills2025JsonSortInput>;
-  readonly childDataJson: InputMaybe<DataJsonSortInput>;
   readonly childImageSharp: InputMaybe<ImageSharpSortInput>;
-  readonly childMembersJson: InputMaybe<MembersJsonSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
-  readonly childrenBills2025Json: InputMaybe<Bills2025JsonSortInput>;
-  readonly childrenDataJson: InputMaybe<DataJsonSortInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpSortInput>;
-  readonly childrenMembersJson: InputMaybe<MembersJsonSortInput>;
   readonly ctime: InputMaybe<SortOrderEnum>;
   readonly ctimeMs: InputMaybe<SortOrderEnum>;
   readonly dev: InputMaybe<SortOrderEnum>;
@@ -1627,316 +1229,6 @@ type JSONQueryOperatorInput = {
   readonly regex: InputMaybe<Scalars['JSON']>;
 };
 
-type MembersJson = Node & {
-  readonly bio: Maybe<Scalars['String']>;
-  readonly children: ReadonlyArray<Node>;
-  readonly committees: Maybe<ReadonlyArray<Maybe<MembersJsonCommittees>>>;
-  readonly id: Scalars['ID'];
-  readonly internal: Internal;
-  readonly jsonId: Maybe<Scalars['Int']>;
-  readonly latest_term: Maybe<MembersJsonLatest_term>;
-  readonly links: Maybe<ReadonlyArray<Maybe<MembersJsonLinks>>>;
-  readonly measures_introduced: Maybe<ReadonlyArray<Maybe<MembersJsonMeasures_introduced>>>;
-  readonly member_id: Maybe<Scalars['Int']>;
-  readonly name: Maybe<Scalars['String']>;
-  readonly parent: Maybe<Node>;
-  readonly photo_url: Maybe<Scalars['String']>;
-};
-
-type MembersJsonCommittees = {
-  readonly committee_name: Maybe<Scalars['String']>;
-  readonly committee_type: Maybe<Scalars['String']>;
-  readonly position: Maybe<Scalars['String']>;
-};
-
-type MembersJsonCommitteesFieldSelector = {
-  readonly committee_name: InputMaybe<FieldSelectorEnum>;
-  readonly committee_type: InputMaybe<FieldSelectorEnum>;
-  readonly position: InputMaybe<FieldSelectorEnum>;
-};
-
-type MembersJsonCommitteesFilterInput = {
-  readonly committee_name: InputMaybe<StringQueryOperatorInput>;
-  readonly committee_type: InputMaybe<StringQueryOperatorInput>;
-  readonly position: InputMaybe<StringQueryOperatorInput>;
-};
-
-type MembersJsonCommitteesFilterListInput = {
-  readonly elemMatch: InputMaybe<MembersJsonCommitteesFilterInput>;
-};
-
-type MembersJsonCommitteesSortInput = {
-  readonly committee_name: InputMaybe<SortOrderEnum>;
-  readonly committee_type: InputMaybe<SortOrderEnum>;
-  readonly position: InputMaybe<SortOrderEnum>;
-};
-
-type MembersJsonConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<MembersJsonEdge>;
-  readonly group: ReadonlyArray<MembersJsonGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<MembersJson>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type MembersJsonConnection_distinctArgs = {
-  field: MembersJsonFieldSelector;
-};
-
-
-type MembersJsonConnection_groupArgs = {
-  field: MembersJsonFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type MembersJsonConnection_maxArgs = {
-  field: MembersJsonFieldSelector;
-};
-
-
-type MembersJsonConnection_minArgs = {
-  field: MembersJsonFieldSelector;
-};
-
-
-type MembersJsonConnection_sumArgs = {
-  field: MembersJsonFieldSelector;
-};
-
-type MembersJsonEdge = {
-  readonly next: Maybe<MembersJson>;
-  readonly node: MembersJson;
-  readonly previous: Maybe<MembersJson>;
-};
-
-type MembersJsonFieldSelector = {
-  readonly bio: InputMaybe<FieldSelectorEnum>;
-  readonly children: InputMaybe<NodeFieldSelector>;
-  readonly committees: InputMaybe<MembersJsonCommitteesFieldSelector>;
-  readonly id: InputMaybe<FieldSelectorEnum>;
-  readonly internal: InputMaybe<InternalFieldSelector>;
-  readonly jsonId: InputMaybe<FieldSelectorEnum>;
-  readonly latest_term: InputMaybe<MembersJsonLatest_termFieldSelector>;
-  readonly links: InputMaybe<MembersJsonLinksFieldSelector>;
-  readonly measures_introduced: InputMaybe<MembersJsonMeasures_introducedFieldSelector>;
-  readonly member_id: InputMaybe<FieldSelectorEnum>;
-  readonly name: InputMaybe<FieldSelectorEnum>;
-  readonly parent: InputMaybe<NodeFieldSelector>;
-  readonly photo_url: InputMaybe<FieldSelectorEnum>;
-};
-
-type MembersJsonFilterInput = {
-  readonly bio: InputMaybe<StringQueryOperatorInput>;
-  readonly children: InputMaybe<NodeFilterListInput>;
-  readonly committees: InputMaybe<MembersJsonCommitteesFilterListInput>;
-  readonly id: InputMaybe<StringQueryOperatorInput>;
-  readonly internal: InputMaybe<InternalFilterInput>;
-  readonly jsonId: InputMaybe<IntQueryOperatorInput>;
-  readonly latest_term: InputMaybe<MembersJsonLatest_termFilterInput>;
-  readonly links: InputMaybe<MembersJsonLinksFilterListInput>;
-  readonly measures_introduced: InputMaybe<MembersJsonMeasures_introducedFilterListInput>;
-  readonly member_id: InputMaybe<IntQueryOperatorInput>;
-  readonly name: InputMaybe<StringQueryOperatorInput>;
-  readonly parent: InputMaybe<NodeFilterInput>;
-  readonly photo_url: InputMaybe<StringQueryOperatorInput>;
-};
-
-type MembersJsonFilterListInput = {
-  readonly elemMatch: InputMaybe<MembersJsonFilterInput>;
-};
-
-type MembersJsonGroupConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<MembersJsonEdge>;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<MembersJsonGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<MembersJson>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type MembersJsonGroupConnection_distinctArgs = {
-  field: MembersJsonFieldSelector;
-};
-
-
-type MembersJsonGroupConnection_groupArgs = {
-  field: MembersJsonFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type MembersJsonGroupConnection_maxArgs = {
-  field: MembersJsonFieldSelector;
-};
-
-
-type MembersJsonGroupConnection_minArgs = {
-  field: MembersJsonFieldSelector;
-};
-
-
-type MembersJsonGroupConnection_sumArgs = {
-  field: MembersJsonFieldSelector;
-};
-
-type MembersJsonLatest_term = {
-  readonly about_content: Maybe<Scalars['String']>;
-  readonly allowance_report_url: Maybe<Scalars['String']>;
-  readonly current_experience: Maybe<Scalars['String']>;
-  readonly district_description: Maybe<Scalars['String']>;
-  readonly district_map_url: Maybe<Scalars['String']>;
-  readonly district_number: Maybe<Scalars['Int']>;
-  readonly district_type: Maybe<Scalars['String']>;
-  readonly email: Maybe<Scalars['String']>;
-  readonly news_content: Maybe<Scalars['String']>;
-  readonly office: Maybe<Scalars['String']>;
-  readonly party: Maybe<Scalars['String']>;
-  readonly phone: Maybe<Scalars['String']>;
-  readonly previous_experience: Maybe<Scalars['String']>;
-  readonly rss_feed_url: Maybe<Scalars['String']>;
-  readonly title: Maybe<Scalars['String']>;
-  readonly year: Maybe<Scalars['Int']>;
-};
-
-type MembersJsonLatest_termFieldSelector = {
-  readonly about_content: InputMaybe<FieldSelectorEnum>;
-  readonly allowance_report_url: InputMaybe<FieldSelectorEnum>;
-  readonly current_experience: InputMaybe<FieldSelectorEnum>;
-  readonly district_description: InputMaybe<FieldSelectorEnum>;
-  readonly district_map_url: InputMaybe<FieldSelectorEnum>;
-  readonly district_number: InputMaybe<FieldSelectorEnum>;
-  readonly district_type: InputMaybe<FieldSelectorEnum>;
-  readonly email: InputMaybe<FieldSelectorEnum>;
-  readonly news_content: InputMaybe<FieldSelectorEnum>;
-  readonly office: InputMaybe<FieldSelectorEnum>;
-  readonly party: InputMaybe<FieldSelectorEnum>;
-  readonly phone: InputMaybe<FieldSelectorEnum>;
-  readonly previous_experience: InputMaybe<FieldSelectorEnum>;
-  readonly rss_feed_url: InputMaybe<FieldSelectorEnum>;
-  readonly title: InputMaybe<FieldSelectorEnum>;
-  readonly year: InputMaybe<FieldSelectorEnum>;
-};
-
-type MembersJsonLatest_termFilterInput = {
-  readonly about_content: InputMaybe<StringQueryOperatorInput>;
-  readonly allowance_report_url: InputMaybe<StringQueryOperatorInput>;
-  readonly current_experience: InputMaybe<StringQueryOperatorInput>;
-  readonly district_description: InputMaybe<StringQueryOperatorInput>;
-  readonly district_map_url: InputMaybe<StringQueryOperatorInput>;
-  readonly district_number: InputMaybe<IntQueryOperatorInput>;
-  readonly district_type: InputMaybe<StringQueryOperatorInput>;
-  readonly email: InputMaybe<StringQueryOperatorInput>;
-  readonly news_content: InputMaybe<StringQueryOperatorInput>;
-  readonly office: InputMaybe<StringQueryOperatorInput>;
-  readonly party: InputMaybe<StringQueryOperatorInput>;
-  readonly phone: InputMaybe<StringQueryOperatorInput>;
-  readonly previous_experience: InputMaybe<StringQueryOperatorInput>;
-  readonly rss_feed_url: InputMaybe<StringQueryOperatorInput>;
-  readonly title: InputMaybe<StringQueryOperatorInput>;
-  readonly year: InputMaybe<IntQueryOperatorInput>;
-};
-
-type MembersJsonLatest_termSortInput = {
-  readonly about_content: InputMaybe<SortOrderEnum>;
-  readonly allowance_report_url: InputMaybe<SortOrderEnum>;
-  readonly current_experience: InputMaybe<SortOrderEnum>;
-  readonly district_description: InputMaybe<SortOrderEnum>;
-  readonly district_map_url: InputMaybe<SortOrderEnum>;
-  readonly district_number: InputMaybe<SortOrderEnum>;
-  readonly district_type: InputMaybe<SortOrderEnum>;
-  readonly email: InputMaybe<SortOrderEnum>;
-  readonly news_content: InputMaybe<SortOrderEnum>;
-  readonly office: InputMaybe<SortOrderEnum>;
-  readonly party: InputMaybe<SortOrderEnum>;
-  readonly phone: InputMaybe<SortOrderEnum>;
-  readonly previous_experience: InputMaybe<SortOrderEnum>;
-  readonly rss_feed_url: InputMaybe<SortOrderEnum>;
-  readonly title: InputMaybe<SortOrderEnum>;
-  readonly year: InputMaybe<SortOrderEnum>;
-};
-
-type MembersJsonLinks = {
-  readonly text: Maybe<Scalars['String']>;
-  readonly url: Maybe<Scalars['String']>;
-};
-
-type MembersJsonLinksFieldSelector = {
-  readonly text: InputMaybe<FieldSelectorEnum>;
-  readonly url: InputMaybe<FieldSelectorEnum>;
-};
-
-type MembersJsonLinksFilterInput = {
-  readonly text: InputMaybe<StringQueryOperatorInput>;
-  readonly url: InputMaybe<StringQueryOperatorInput>;
-};
-
-type MembersJsonLinksFilterListInput = {
-  readonly elemMatch: InputMaybe<MembersJsonLinksFilterInput>;
-};
-
-type MembersJsonLinksSortInput = {
-  readonly text: InputMaybe<SortOrderEnum>;
-  readonly url: InputMaybe<SortOrderEnum>;
-};
-
-type MembersJsonMeasures_introduced = {
-  readonly bill_identifier: Maybe<Scalars['String']>;
-  readonly title: Maybe<Scalars['String']>;
-  readonly url: Maybe<Scalars['String']>;
-};
-
-type MembersJsonMeasures_introducedFieldSelector = {
-  readonly bill_identifier: InputMaybe<FieldSelectorEnum>;
-  readonly title: InputMaybe<FieldSelectorEnum>;
-  readonly url: InputMaybe<FieldSelectorEnum>;
-};
-
-type MembersJsonMeasures_introducedFilterInput = {
-  readonly bill_identifier: InputMaybe<StringQueryOperatorInput>;
-  readonly title: InputMaybe<StringQueryOperatorInput>;
-  readonly url: InputMaybe<StringQueryOperatorInput>;
-};
-
-type MembersJsonMeasures_introducedFilterListInput = {
-  readonly elemMatch: InputMaybe<MembersJsonMeasures_introducedFilterInput>;
-};
-
-type MembersJsonMeasures_introducedSortInput = {
-  readonly bill_identifier: InputMaybe<SortOrderEnum>;
-  readonly title: InputMaybe<SortOrderEnum>;
-  readonly url: InputMaybe<SortOrderEnum>;
-};
-
-type MembersJsonSortInput = {
-  readonly bio: InputMaybe<SortOrderEnum>;
-  readonly children: InputMaybe<NodeSortInput>;
-  readonly committees: InputMaybe<MembersJsonCommitteesSortInput>;
-  readonly id: InputMaybe<SortOrderEnum>;
-  readonly internal: InputMaybe<InternalSortInput>;
-  readonly jsonId: InputMaybe<SortOrderEnum>;
-  readonly latest_term: InputMaybe<MembersJsonLatest_termSortInput>;
-  readonly links: InputMaybe<MembersJsonLinksSortInput>;
-  readonly measures_introduced: InputMaybe<MembersJsonMeasures_introducedSortInput>;
-  readonly member_id: InputMaybe<SortOrderEnum>;
-  readonly name: InputMaybe<SortOrderEnum>;
-  readonly parent: InputMaybe<NodeSortInput>;
-  readonly photo_url: InputMaybe<SortOrderEnum>;
-};
-
 /** Node Interface */
 type Node = {
   readonly children: ReadonlyArray<Node>;
@@ -2006,44 +1298,22 @@ type PotraceTurnPolicy =
   | 'white';
 
 type Query = {
-  readonly allBills2025Json: Bills2025JsonConnection;
-  readonly allDataJson: DataJsonConnection;
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
   readonly allImageSharp: ImageSharpConnection;
-  readonly allMembersJson: MembersJsonConnection;
   readonly allSite: SiteConnection;
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
-  readonly bills2025Json: Maybe<Bills2025Json>;
-  readonly dataJson: Maybe<DataJson>;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly imageSharp: Maybe<ImageSharp>;
-  readonly membersJson: Maybe<MembersJson>;
   readonly site: Maybe<Site>;
   readonly siteBuildMetadata: Maybe<SiteBuildMetadata>;
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
-};
-
-
-type Query_allBills2025JsonArgs = {
-  filter: InputMaybe<Bills2025JsonFilterInput>;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<Bills2025JsonSortInput>>>;
-};
-
-
-type Query_allDataJsonArgs = {
-  filter: InputMaybe<DataJsonFilterInput>;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<DataJsonSortInput>>>;
 };
 
 
@@ -2068,14 +1338,6 @@ type Query_allImageSharpArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<ImageSharpSortInput>>>;
-};
-
-
-type Query_allMembersJsonArgs = {
-  filter: InputMaybe<MembersJsonFilterInput>;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<MembersJsonSortInput>>>;
 };
 
 
@@ -2116,37 +1378,6 @@ type Query_allSitePluginArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<SitePluginSortInput>>>;
-};
-
-
-type Query_bills2025JsonArgs = {
-  bill_number: InputMaybe<IntQueryOperatorInput>;
-  bill_type: InputMaybe<StringQueryOperatorInput>;
-  children: InputMaybe<NodeFilterListInput>;
-  current_bill_url: InputMaybe<StringQueryOperatorInput>;
-  current_pdf_url: InputMaybe<StringQueryOperatorInput>;
-  current_version: InputMaybe<StringQueryOperatorInput>;
-  id: InputMaybe<StringQueryOperatorInput>;
-  internal: InputMaybe<InternalFilterInput>;
-  jsonId: InputMaybe<IntQueryOperatorInput>;
-  latest_status: InputMaybe<Bills2025JsonLatest_statusFilterInput>;
-  parent: InputMaybe<NodeFilterInput>;
-  status_count: InputMaybe<IntQueryOperatorInput>;
-  year: InputMaybe<IntQueryOperatorInput>;
-};
-
-
-type Query_dataJsonArgs = {
-  bill_types: InputMaybe<StringQueryOperatorInput>;
-  children: InputMaybe<NodeFilterListInput>;
-  id: InputMaybe<StringQueryOperatorInput>;
-  internal: InputMaybe<InternalFilterInput>;
-  last_updated: InputMaybe<DateQueryOperatorInput>;
-  parent: InputMaybe<NodeFilterInput>;
-  passage_rate: InputMaybe<DataJsonPassage_rateFilterInput>;
-  total_bills: InputMaybe<IntQueryOperatorInput>;
-  total_members: InputMaybe<IntQueryOperatorInput>;
-  years_available: InputMaybe<IntQueryOperatorInput>;
 };
 
 
@@ -2198,18 +1429,10 @@ type Query_fileArgs = {
   birthTime: InputMaybe<DateQueryOperatorInput>;
   birthtime: InputMaybe<DateQueryOperatorInput>;
   birthtimeMs: InputMaybe<FloatQueryOperatorInput>;
-  blksize: InputMaybe<IntQueryOperatorInput>;
-  blocks: InputMaybe<IntQueryOperatorInput>;
   changeTime: InputMaybe<DateQueryOperatorInput>;
-  childBills2025Json: InputMaybe<Bills2025JsonFilterInput>;
-  childDataJson: InputMaybe<DataJsonFilterInput>;
   childImageSharp: InputMaybe<ImageSharpFilterInput>;
-  childMembersJson: InputMaybe<MembersJsonFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
-  childrenBills2025Json: InputMaybe<Bills2025JsonFilterListInput>;
-  childrenDataJson: InputMaybe<DataJsonFilterListInput>;
   childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
-  childrenMembersJson: InputMaybe<MembersJsonFilterListInput>;
   ctime: InputMaybe<DateQueryOperatorInput>;
   ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   dev: InputMaybe<IntQueryOperatorInput>;
@@ -2249,23 +1472,6 @@ type Query_imageSharpArgs = {
   original: InputMaybe<ImageSharpOriginalFilterInput>;
   parent: InputMaybe<NodeFilterInput>;
   resize: InputMaybe<ImageSharpResizeFilterInput>;
-};
-
-
-type Query_membersJsonArgs = {
-  bio: InputMaybe<StringQueryOperatorInput>;
-  children: InputMaybe<NodeFilterListInput>;
-  committees: InputMaybe<MembersJsonCommitteesFilterListInput>;
-  id: InputMaybe<StringQueryOperatorInput>;
-  internal: InputMaybe<InternalFilterInput>;
-  jsonId: InputMaybe<IntQueryOperatorInput>;
-  latest_term: InputMaybe<MembersJsonLatest_termFilterInput>;
-  links: InputMaybe<MembersJsonLinksFilterListInput>;
-  measures_introduced: InputMaybe<MembersJsonMeasures_introducedFilterListInput>;
-  member_id: InputMaybe<IntQueryOperatorInput>;
-  name: InputMaybe<StringQueryOperatorInput>;
-  parent: InputMaybe<NodeFilterInput>;
-  photo_url: InputMaybe<StringQueryOperatorInput>;
 };
 
 
