@@ -53,23 +53,6 @@ services:
       - build
     command: ["npm", "run", "build:github"]
 
-  frontend-deploy:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-      target: deploy
-    container_name: ratemylegislator-frontend-deploy
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-      - ./.git:/app/.git:ro  # Mount git repository for gh-pages
-      - ~/.ssh:/root/.ssh:ro  # Mount SSH keys for git authentication
-      - ~/.gitconfig:/root/.gitconfig:ro  # Mount git config
-    environment:
-      - NODE_ENV=production
-    profiles:
-      - deploy
-    command: ["npm", "run", "deploy"]
 
   # Database service (for future PostgreSQL migration)
   # postgres:

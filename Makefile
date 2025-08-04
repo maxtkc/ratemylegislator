@@ -14,7 +14,6 @@ help:
 	@echo "  scraper        - Start data-scraper service"
 	@echo "  frontend       - Start frontend development server"
 	@echo "  build-static   - Build static site for GitHub Pages"
-	@echo "  deploy         - Build and deploy to GitHub Pages"
 	@echo "  scrape         - Run limited scrape with data export"
 	@echo "  scrape-full    - Run full data scraping with export"
 	@echo "  scrape-members - Range scrape members: IDS='1-250' YEAR='2025' make scrape-members"
@@ -58,9 +57,6 @@ frontend:
 build-static:
 	docker-compose --profile build run --rm frontend-build
 
-# Deploy to GitHub Pages
-deploy:
-	docker-compose --profile deploy run --rm frontend-deploy
 
 # Run limited scrape
 scrape:

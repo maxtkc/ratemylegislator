@@ -36,22 +36,6 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Deployment stage (includes dev dependencies for gh-pages)
-FROM node:18-alpine AS deploy
-
-WORKDIR /app
-
-# Install git for gh-pages deployment
-RUN apk add --no-cache git
-
-# Copy package files
-COPY package*.json ./
-
-# Install ALL dependencies (including dev dependencies like gh-pages)
-RUN npm ci && npm cache clean --force
-
-# Copy source code
-COPY . .
 
 # Production stage
 FROM nginx:alpine AS production
