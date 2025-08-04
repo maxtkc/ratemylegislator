@@ -26,15 +26,29 @@ jobs:
           cache: 'npm'
           cache-dependency-path: frontend/package-lock.json
           
+      - name: Cache Gatsby build
+        uses: actions/cache@v4
+        with:
+          path: |
+            frontend/.cache
+            frontend/public
+          key: ${{ runner.os }}-gatsby-build-${{ hashFiles('frontend/package-lock.json') }}-${{ hashFiles('frontend/src/**', 'frontend/gatsby-*.js', 'frontend/gatsby-*.ts') }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-build-${{ hashFiles('frontend/package-lock.json') }}-
+            ${{ runner.os }}-gatsby-build-
+          
       - name: Install dependencies
         run: |
           cd frontend
-          npm ci
+          npm ci --prefer-offline --no-audit
           
       - name: Build Gatsby site
         run: |
           cd frontend
           npm run build:github
+        env:
+          CI: true
+          GATSBY_CPU_COUNT: 2
           
       - name: Setup Pages
         if: github.ref == 'refs/heads/main'
